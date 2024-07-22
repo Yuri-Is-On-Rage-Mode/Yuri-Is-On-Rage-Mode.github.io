@@ -1,4 +1,4 @@
-# 🌟 Welcome to my GitHub Pages! 🌟
+# 🌟 GitHub Pages! 🌟
 
 Hey there, fellow internet explorer! 🚀 You've stumbled upon the magical realm of **Yuri**! 🧙‍♂️💻 Prepare yourself for a wild ride through my world of code, chaos, and creativity! 🎢✨
 
