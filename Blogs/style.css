@@ -170,29 +170,3 @@ nav a:hover {
         margin: 10px 0;
     }
 }
-
-.stat-icon {
-    background:lime;
-    border-radius:20px;
-    padding:10px;
-    margin:5px;
-}
-
-.stat-icon-clickable {
-    background:lime;
-    border-radius:20px;
-    padding:10px;
-    margin:5px;
-}
-
-.stat-icon-clickable:hover {
-    background:lime;
-    border-radius:25px;
-    padding:12px;
-    margin:6px;
-}
-
-.Heading-1-Dark {
-    color:#212529;
-    font-family: consolas;
-}

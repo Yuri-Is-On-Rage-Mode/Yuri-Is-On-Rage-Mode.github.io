@@ -129,9 +129,11 @@
             padding: 0.5rem;
             border-radius: 5px;
             margin-bottom: 0.5rem;
+            font-size: 1.2rem;
         }
         .sidebar-section ul {
             list-style: none;
+            padding-left: 0;
         }
         .sidebar-section ul li {
             margin-bottom: 0.5rem;
@@ -139,6 +141,7 @@
         .sidebar-section ul li a {
             color: #007bff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .sidebar-section ul li a:hover {
             text-decoration: underline;
@@ -211,7 +214,6 @@
         }
 
         function fetchSidebarData() {
-            // Fetch recent posts and tags data
             fetch('../BlogPosts/sidebarData.json')
                 .then(response => response.json())
                 .then(data => {
