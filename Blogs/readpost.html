@@ -17,18 +17,16 @@
             background-color: #f4f4f4;
             color: #333;
         }
-        .Header-V1 {
-            color:#212529;
-            font-family: Courier;
-            padding:2px;
-        }
         header {
-            background-color: white;
-            padding: 5px;
-            font-family: monospace;
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         nav {
-            background: #007bff;
+            background: #0056b3;
             color: #fff;
             padding: 0.5rem;
             text-align: center;
@@ -45,9 +43,25 @@
             color: #f4f4f4;
         }
         .container {
-            width: 80%;
+            display: flex;
             margin: auto;
             padding: 1rem;
+            max-width: 1200px;
+        }
+        .main-content {
+            flex: 3;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-right: 1rem;
+        }
+        .sidebar {
+            flex: 1;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         #post-content {
             background: #fff;
@@ -106,6 +120,29 @@
             background: #0056b3;
             transform: scale(1.05);
         }
+        .sidebar-section {
+            margin-bottom: 1rem;
+        }
+        .sidebar-section h3 {
+            background: #007bff;
+            color: #fff;
+            padding: 0.5rem;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-section ul {
+            list-style: none;
+        }
+        .sidebar-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .sidebar-section ul li a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .sidebar-section ul li a:hover {
+            text-decoration: underline;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -115,19 +152,33 @@
 <body>
     <header>
         <span class="Header-V1">Read Mi Blog</span>
-        <nav style="text-align:left;">
-            <a href="./index.html">Explore Blogs</a>
-            <a href="../">More About Yuri</a>
-        </nav>
     </header>
     
+    <nav>
+        <a href="./index.html">Explore Blogs</a>
+        <a href="../">More About Yuri</a>
+    </nav>
+
     <div class="container">
-        <div id="post-content"></div>
-        <div id="post-info">
-            <button id="star-btn"><span class="stat-icon-clickable">⭐</span> Star</button>
-            <button id="pin-btn"><span class="stat-icon-clickable">📌</span> Pin</button>
-            <button id="share-btn"><span class="stat-icon-clickable">🔗</span> Share</button>
+        <div class="main-content">
+            <div id="post-content"></div>
+            <div id="post-info">
+                <button id="star-btn"><span class="stat-icon-clickable">⭐</span> Star</button>
+                <button id="pin-btn"><span class="stat-icon-clickable">📌</span> Pin</button>
+                <button id="share-btn"><span class="stat-icon-clickable">🔗</span> Share</button>
+            </div>
         </div>
+        
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>Recent Posts</h3>
+                <ul id="recent-posts-list"></ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Popular Tags</h3>
+                <ul id="tags-list"></ul>
+            </div>
+        </aside>
     </div>
 
     <script>
@@ -135,6 +186,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const postTitle = urlParams.get('title').replace(/_/g, ' ');
             fetchPostContent(postTitle);
+            fetchSidebarData();
         });
 
         function fetchPostContent(postTitle) {
@@ -155,6 +207,31 @@
                 })
                 .catch(error => {
                     console.error('Error fetching post content:', error);
+                });
+        }
+
+        function fetchSidebarData() {
+            // Fetch recent posts and tags data
+            fetch('../BlogPosts/sidebarData.json')
+                .then(response => response.json())
+                .then(data => {
+                    const recentPostsList = document.getElementById('recent-posts-list');
+                    const tagsList = document.getElementById('tags-list');
+
+                    data.recentPosts.forEach(post => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `<a href="readpost.html?title=${post.title.replace(/ /g, '_')}">${post.title}</a>`;
+                        recentPostsList.appendChild(listItem);
+                    });
+
+                    data.tags.forEach(tag => {
+                        const listItem = document.createElement('li');
+                        listItem.innerHTML = `<a href="tag.html?tag=${tag}">${tag}</a>`;
+                        tagsList.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching sidebar data:', error);
                 });
         }
 

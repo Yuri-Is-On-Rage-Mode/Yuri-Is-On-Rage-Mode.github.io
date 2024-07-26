@@ -1,33 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>      
-        .stat-icon {
-            background:lime;
-            border-radius:20px;
-            padding:10px;
-            margin:5px;
-        }
-
-        .stat-icon-clickable {
-            background:lime;
-            border-radius:20px;
-            padding:10px;
-            margin:5px;
-        }
-
-        .stat-icon-clickable:hover {
-            background:lime;
-            border-radius:25px;
-            padding:12px;
-            margin:6px;
-        }
-
-        .Heading-1-Dark {
-            color:#212529;
-            font-family: consolas;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Homepage</title>
@@ -108,6 +81,7 @@
             padding: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            color: #333;
         }
         .card:hover {
             transform: scale(1.02);
@@ -129,6 +103,19 @@
         .stat-icon {
             color: #007bff;
         }
+        .latest { background: #e3f2fd; }
+        .most-viewed { background: #fff3e0; }
+        .most-pinned-starred { background: #f1f8e9; }
+        .most-liked { background: #ffe0b2; }
+        .most-hated { background: #ffebee; }
+        .most-long { background: #e8f5e9; }
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .card-details {
+            font-size: 0.9rem;
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -138,9 +125,9 @@
 <body>
     <header>
         <span class="Header-V1">Read Mi Blog</span>
-        <nav style="text-align:left;">
+        <nav>
             <a href="./index.html">Explore Blogs</a>
-            <a href="../index.html">More About Yuri</a>
+            <a href="../">More About Yuri</a>
         </nav>
     </header>
 
@@ -149,11 +136,16 @@
             <div class="tab active" data-tab="latest">Latest Posts</div>
             <div class="tab" data-tab="most-viewed">Most Viewed</div>
             <div class="tab" data-tab="most-pinned-starred">Most Pinned/Starred</div>
+            <div class="tab" data-tab="most-liked">Most Liked</div>
+            <div class="tab" data-tab="most-hated">Most Hated</div>
+            <div class="tab" data-tab="most-long">Most Long</div>
         </div>
         <div id="latest-posts-container" class="tab-content active"></div>
         <div id="most-viewed-posts-container" class="tab-content"></div>
         <div id="most-pinned-starred-posts-container" class="tab-content"></div>
-        <div id="all-posts-container" class="tab-content"></div>
+        <div id="most-liked-posts-container" class="tab-content"></div>
+        <div id="most-hated-posts-container" class="tab-content"></div>
+        <div id="most-long-posts-container" class="tab-content"></div>
     </div>
 
     <script>
@@ -177,12 +169,14 @@
             const latestPostsContainer = document.getElementById('latest-posts-container');
             const mostViewedPostsContainer = document.getElementById('most-viewed-posts-container');
             const mostPinnedStarredPostsContainer = document.getElementById('most-pinned-starred-posts-container');
-            const allPostsContainer = document.getElementById('all-posts-container');
+            const mostLikedPostsContainer = document.getElementById('most-liked-posts-container');
+            const mostHatedPostsContainer = document.getElementById('most-hated-posts-container');
+            const mostLongPostsContainer = document.getElementById('most-long-posts-container');
 
             // Display latest posts
             const latestPosts = posts.slice(-5).reverse();
             latestPosts.forEach(post => {
-                const postCard = createPostCard(post);
+                const postCard = createPostCard(post, 'latest');
                 latestPostsContainer.appendChild(postCard);
             });
 
@@ -200,22 +194,41 @@
                 mostPinnedStarredPostsContainer.appendChild(postCard);
             });
 
-            // Display all posts
-            posts.forEach(post => {
-                const postCard = createPostCard(post);
-                allPostsContainer.appendChild(postCard);
+            // Display most liked posts
+            const mostLikedPosts = [...posts].sort((a, b) => b.likes - a.likes).slice(0, 3);
+            mostLikedPosts.forEach(post => {
+                const postCard = createPostCard(post, 'most-liked');
+                mostLikedPostsContainer.appendChild(postCard);
+            });
+
+            // Display most hated posts
+            const mostHatedPosts = [...posts].sort((a, b) => b.hates - a.hates).slice(0, 3);
+            mostHatedPosts.forEach(post => {
+                const postCard = createPostCard(post, 'most-hated');
+                mostHatedPostsContainer.appendChild(postCard);
+            });
+
+            // Display most lengthy posts
+            const mostLongPosts = [...posts].sort((a, b) => b.length - a.length).slice(0, 3);
+            mostLongPosts.forEach(post => {
+                const postCard = createPostCard(post, 'most-long');
+                mostLongPostsContainer.appendChild(postCard);
             });
         }
 
         function createPostCard(post, category = '') {
             const postCard = document.createElement('div');
-            postCard.classList.add('card');
-            if (category === 'most-viewed' || category === 'most-pinned-starred') {
-                postCard.classList.add(category);
-            }
+            postCard.classList.add('card', category);
             postCard.innerHTML = `
-                <h3>${post.title}</h3>
-                <p><span class="stat-icon">Stars: ${post.stars}</span> | <span class="stat-icon">Pins: ${post.pins}</span> | <span class="stat-icon">Views: ${post.views}</span></p>
+                <h3 class="card-title">${post.title}</h3>
+                <p class="card-details">
+                    <span class="stat-icon">Stars: ${post.stars}</span> | 
+                    <span class="stat-icon">Pins: ${post.pins}</span> | 
+                    <span class="stat-icon">Views: ${post.views}</span> | 
+                    <span class="stat-icon">Likes: ${post.likes}</span> | 
+                    <span class="stat-icon">Hates: ${post.hates}</span> | 
+                    <span class="stat-icon">Length: ${post.length} words</span>
+                </p>
                 <a href="readpost.html?title=${post.title.replace(/ /g, '_')}">Read more</a>
             `;
             return postCard;
