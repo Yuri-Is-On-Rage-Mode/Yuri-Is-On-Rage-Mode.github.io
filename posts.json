@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Example Post 1",
+        "stars": 10,
+        "pins": 5,
+        "views": 100
+    },
+    {
+        "title": "Example Post 2",
+        "stars": 20,
+        "pins": 15,
+        "views": 200
+    }
+]
