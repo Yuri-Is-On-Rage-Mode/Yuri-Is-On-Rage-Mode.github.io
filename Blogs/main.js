@@ -1,10 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     fetchPosts();
-    if (window.location.pathname.endsWith('readpost.html')) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const postTitle = urlParams.get('title').replace(/_/g, ' ');
-        fetchPostContent(postTitle);
-    }
 });
 
 function fetchPosts() {
@@ -61,28 +56,7 @@ function createPostCard(post, category = '') {
     postCard.innerHTML = `
         <h3>${post.title}</h3>
         <p>Stars: ${post.stars} | Pins: ${post.pins} | Views: ${post.views}</p>
-        <a href="readpost.html?title=${post.title.replace(/ /g, '_')}">Read more</a>
+        <a href="readpost.html?title=${encodeURIComponent(post.title.replace(/ /g, '_'))}">Read more</a>
     `;
     return postCard;
-}
-
-function fetchPostContent(postTitle) {
-    const postDir = `../BlogPosts/${postTitle.replace(/ /g, '_')}`;
-    fetch(`${postDir}/${postTitle.replace(/ /g, '_')}.blog`)
-        .then(response => response.text())
-        .then(content => {
-            document.getElementById('post-content').innerHTML = content;
-            fetch(`${postDir}/SomeData.json`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('post-info').innerHTML = `
-                        <p>Stars: ${data.stars}</p>
-                        <p>Pins: ${data.pins}</p>
-                        <p>Views: ${data.views}</p>
-                    `;
-                });
-        })
-        .catch(error => {
-            console.error('Error fetching post content:', error);
-        });
 }

@@ -2,68 +2,23 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    display: flex;
-    padding: 2rem;
-}
-
-aside#sidebar {
-    flex: 1;
-}
-
-article#post-content {
-    flex: 2;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-aside#post-info {
-    flex: 1;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-section h2 {
-    margin-top: 0;
 }
 
 .card {
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+}
+
+.most-viewed {
+    background-color: #f0f8ff;
+}
+
+.most-pinned-starred {
+    background-color: #ffebcd;
+}
+
+#latest-posts-container, #most-viewed-posts-container, #most-pinned-starred-posts-container, #all-posts-container {
+    padding: 16px;
 }

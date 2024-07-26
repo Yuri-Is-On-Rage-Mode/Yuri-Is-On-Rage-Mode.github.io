@@ -7,30 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>My Blog</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <aside id="sidebar">
-            <!-- Sidebar content -->
-        </aside>
-        <article id="post-content">
-            <!-- Blog post content will be inserted here -->
-        </article>
-        <aside id="post-info">
-            <!-- Post info like stars, pins, etc. will be displayed here -->
-        </aside>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Blog</p>
-    </footer>
-    <script src="main.js"></script>
+    <div id="post-content"></div>
+    <div id="post-info"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postTitle = urlParams.get('title').replace(/_/g, ' ');
+            fetchPostContent(postTitle);
+        });
+
+        function fetchPostContent(postTitle) {
+            const postDir = `../BlogPosts/${postTitle.replace(/ /g, '_')}`;
+            fetch(`${postDir}/${postTitle.replace(/ /g, '_')}.blog`)
+                .then(response => response.text())
+                .then(content => {
+                    document.getElementById('post-content').innerHTML = content;
+                    fetch(`${postDir}/SomeData.json`)
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('post-info').innerHTML = `
+                                <p>Stars: ${data.stars}</p>
+                                <p>Pins: ${data.pins}</p>
+                                <p>Views: ${data.views}</p>
+                            `;
+                        });
+                })
+                .catch(error => {
+                    console.error('Error fetching post content:', error);
+                });
+        }
+    </script>
 </body>
 </html>
