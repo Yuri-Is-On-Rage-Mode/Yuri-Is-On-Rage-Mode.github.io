@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>      
+        .stat-icon {
+            background:lime;
+            border-radius:20px;
+            padding:10px;
+            margin:5px;
+        }
+
+        .stat-icon-clickable {
+            background:lime;
+            border-radius:20px;
+            padding:10px;
+            margin:5px;
+        }
+
+        .stat-icon-clickable:hover {
+            background:lime;
+            border-radius:25px;
+            padding:12px;
+            margin:6px;
+        }
+
+        .Heading-1-Dark {
+            color:#212529;
+            font-family: consolas;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Read Post</title>
@@ -11,16 +38,15 @@
         <span class="Heading-1-Dark">Read Post</span>
     </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="./index.html">Explore Blogs</a>
+        <a href="../index.html">More About Yuri</a>
     </nav>
     <div class="container">
         <div id="post-content" class="fade-in"></div>
         <div id="post-info" class="fade-in">
-            <button id="star-btn"><span class="stat-icon"></span>Star</span></button>
-            <button id="pin-btn"><span class="stat-icon"></span>Pin</span></button>
-            <button id="share-btn"><span class="stat-icon"></span>Share</span></button>
+            <button id="star-btn"><span class="stat-icon-clickable"></span>Star</span></button>
+            <button id="pin-btn"><span class="stat-icon-clickable"></span>Pin</span></button>
+            <button id="share-btn"><span class="stat-icon-clickable"></span>Share</span></button>
         </div>
     </div>
 
