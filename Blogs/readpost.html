@@ -7,8 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="post-content"></div>
-    <div id="post-info"></div>
+    <header class="bg-dark">
+        <span class="Heading-1-Dark">Read Post</span>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div id="post-content" class="fade-in"></div>
+        <div id="post-info" class="fade-in">
+            <button id="star-btn"><span class="stat-icon"></span>Star</span></button>
+            <button id="pin-btn"><span class="stat-icon"></span>Pin</span></button>
+            <button id="share-btn"><span class="stat-icon"></span>Share</span></button>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -27,9 +41,9 @@
                         .then(response => response.json())
                         .then(data => {
                             document.getElementById('post-info').innerHTML = `
-                                <p>Stars: ${data.stars}</p>
-                                <p>Pins: ${data.pins}</p>
-                                <p>Views: ${data.views}</p>
+                                <p><span class="stat-icon">Stars: ${data.stars}</span></p>
+                                <p><span class="stat-icon">Pins: ${data.pins}</span></p>
+                                <p><span class="stat-icon">Views: ${data.views}</span></p>
                             `;
                         });
                 })
@@ -37,6 +51,24 @@
                     console.error('Error fetching post content:', error);
                 });
         }
+
+        document.getElementById('star-btn').addEventListener('click', () => {
+            alert('Post starred!');
+        });
+
+        document.getElementById('pin-btn').addEventListener('click', () => {
+            alert('Post pinned!');
+        });
+
+        document.getElementById('share-btn').addEventListener('click', () => {
+            navigator.clipboard.writeText(window.location.href)
+                .then(() => {
+                    alert('Link copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Failed to copy link:', err);
+                });
+        });
     </script>
 </body>
 </html>

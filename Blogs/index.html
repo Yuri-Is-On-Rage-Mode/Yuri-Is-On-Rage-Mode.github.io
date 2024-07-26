@@ -7,14 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="latest-posts-container"></div>
-    <div id="most-viewed-posts-container"></div>
-    <div id="most-pinned-starred-posts-container"></div>
-    <div id="all-posts-container"></div>
+    <header class="bg-dark">
+        <h1 class="text-light">My Blog</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="latest">Latest Posts</div>
+            <div class="tab" data-tab="most-viewed">Most Viewed</div>
+            <div class="tab" data-tab="most-pinned-starred">Most Pinned/Starred</div>
+        </div>
+        <div id="latest-posts-container" class="tab-content active"></div>
+        <div id="most-viewed-posts-container" class="tab-content"></div>
+        <div id="most-pinned-starred-posts-container" class="tab-content"></div>
+        <div id="all-posts-container" class="tab-content"></div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             fetchPosts();
+            setupTabs();
         });
 
         function fetchPosts() {
@@ -70,10 +86,22 @@
             }
             postCard.innerHTML = `
                 <h3>${post.title}</h3>
-                <p>Stars: ${post.stars} | Pins: ${post.pins} | Views: ${post.views}</p>
+                <p><span class="stat-icon">Stars: ${post.stars}</span> | <span class="stat-icon">Pins: ${post.pins}</span> | <span class="stat-icon">Views: ${post.views}</span></p>
                 <a href="readpost.html?title=${post.title.replace(/ /g, '_')}">Read more</a>
             `;
             return postCard;
+        }
+
+        function setupTabs() {
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    document.getElementById(`${tab.dataset.tab}-posts-container`).classList.add('active');
+                });
+            });
         }
     </script>
 </body>
