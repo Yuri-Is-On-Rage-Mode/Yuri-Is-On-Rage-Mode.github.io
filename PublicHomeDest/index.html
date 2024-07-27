@@ -168,6 +168,19 @@
         h1, h2, p {
             margin-bottom: 20px;
         }
+        .lnk-top-nav-bar-hvr {
+            font-size:15px;
+            color:white;
+            font-family: monospace;
+            transition-duration: 0.3s;
+        }
+        .lnk-top-nav-bar-hvr:hover {
+            font-size:16px;
+            color:white;
+            font-family: monospace;
+            border-bottom:1px solid white;
+            transition-duration: 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -175,82 +188,18 @@
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
             <img src="../assets/annomymys2.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
-            <span class="ml-3 text-xl text-gray-100 md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400">YURI-IS-ON-RAGE-MODE</span>
+            <span class="ml-3 text-l text-gray-100" style="font-family: monospace;font-size:15px;margin:10px;">/</span>
+            <img src="../assets/me_myself.ico" alt="Me_Myself Logo" class="w-10 h-10 rounded-full">
+            <span class="ml-3 text-l text-gray-100 grad" style="font-family: monospace;">Yuri</span>
           </a>
           <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 text-gray-100 hover:text-purple-700" href="WebEss/About.html">About Me</a>
-            <a class="mr-5 text-gray-100 hover:text-purple-700">Who are Fri3nds</a>
-            <a class="mr-5 text-gray-100 hover:text-purple-700">Read Articles</a>
-            <a class="mr-5 text-gray-100 hover:text-purple-700">My Projects</a>
+            <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="WebEss/About.html">About Me</a>
+            <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#my_work">My Work</a>
+            <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#social">Connect</a>
           </nav>
-          <style>
-            .glow-candle {
-                position: relative;
-                display: inline-flex;
-                align-items: center;
-                background-color: #f5f5f5;
-                border: 0;
-                padding: 0.25rem 0.75rem;
-                text-base;
-                margin-top: 1rem;
-                margin-right: 0;
-                border-radius: 0.375rem; /* Adjust based on your design */
-                color: #333;
-                font-size: 1rem;
-                text-decoration: none;
-                transition: background-color 0.3s ease;
-                box-shadow: 0 0 10px rgba(255, 180, 0, 0.6);
-                animation: candle-glow 1.5s infinite alternate;
-                }
-
-                .glow-candle:hover {
-                background-color: #e0e0e0;
-                box-shadow: 0 0 15px rgba(255, 180, 0, 0.8);
-                animation: fire 1s infinite;
-                }
-
-                .glow-candle svg {
-                width: 1rem;
-                height: 1rem;
-                margin-left: 0.25rem;
-                }
-
-                @keyframes candle-glow {
-                0% {
-                    box-shadow: 0 0 10px rgba(255, 180, 0, 0.6);
-                    transform: scale(1);
-                }
-                100% {
-                    box-shadow: 0 0 20px rgba(255, 180, 0, 1);
-                    transform: scale(1.05);
-                }
-                }
-
-                @keyframes fire {
-                0% {
-                    transform: scale(1);
-                    box-shadow: 0 0 10px rgba(255, 180, 0, 0.8), 0 0 20px rgba(255, 150, 0, 0.6);
-                }
-                50% {
-                    transform: scale(1.1);
-                    box-shadow: 0 0 15px rgba(255, 180, 0, 1), 0 0 25px rgba(255, 150, 0, 0.8);
-                }
-                100% {
-                    transform: scale(1);
-                    box-shadow: 0 0 10px rgba(255, 180, 0, 0.8), 0 0 20px rgba(255, 150, 0, 0.6);
-                }
-                }
-
-          </style>
-          <a href="https://github.com/Yuri-Is-On-Rage-Mode" class="glow-candle inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-purple-200 rounded text-base mt-4 md:mt-0">
-            Github
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-          
         </div>
     </header>
+
     <section>
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <style>
@@ -393,13 +342,13 @@ switch(target) {
         sidebarTitle.textContent = 'Github';
         sidebarTitle.style.color = 'white'; /* White */
         sidebar.style.background = 'linear-gradient(to right, #6e5494, #8e44ad)'; /* Purple gradient */
-        sidebarContent.innerHTML = 'Github is where I keep my code because I enjoy mixing coding with chaos. It\'s like my digital junk drawer, but more organized. I don\'t use GitHub for daily tasks because I accidentally uploaded my grocery list there once.';
+        sidebarContent.innerHTML = 'Github is where I keep my code because I enjoy mixing coding with chaos. It\'s like my digital junk drawer, but more organized. I don\'t use GitHub for daily tasks because I accidentally uploaded my grocery list there once.<br><br> <p style="padding:5px; border:1px solid white;">🎉 You can visit my Github account <a href="https://github.com/Yuri-Is-On-Rage-Mode"><u>here at Yuri-Is-On-Rage-Mode</u></a>!</p><br>';
         break;
     case 'patreon':
         sidebarTitle.textContent = 'Patreon';
         sidebarTitle.style.color = 'white'; /* White */
         sidebar.style.background = 'linear-gradient(to right, #ff4242, #d63031)'; /* Red gradient */
-        sidebarContent.innerHTML = 'Patreon is like having a tip jar, but cooler. I use it to fund my endless pursuit of weird programming projects and cat memes. I don\'t use Patreon for food delivery because it turns out they don\'t deliver pizza with code snippets.';
+        sidebarContent.innerHTML = 'Patreon is like having a tip jar, but cooler. I use it to fund my endless pursuit of weird programming projects and cat memes. I don\'t use Patreon for food delivery because it turns out they don\'t deliver pizza with code snippets.<br><br> <p style="padding:5px; border:1px solid white;">🎉 You can visit my Patreon account <a href="https://www.patreon.com/akaYuri"><u>here at akaYuri</u></a>!</p><br><p style="padding:5px; border:1px solid white;">🚀 I don\'t have any paid stuff there yet, but stay tuned... cool content is coming soon! 😎</p>';
         break;
     case 'twitter':
         sidebarTitle.textContent = 'Twitter';
@@ -496,149 +445,10 @@ switch(target) {
         <div class="flex flex-wrap">
             <div class="card fade-in">
                 <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
+                    <h2 class="text-lg font-semibold">👋 Hi, I’m Yuri</h2>
+                    <p>YOU MIGHT KNOW ME AS YURI-DABANG, BUT NOW I AM Yuri-Is-On-Rage-Mode</p>
                 </div>
             </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 1</h2>
-                    <p>This is some content for the first card. It's dark and stylish!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 2</h2>
-                    <p>This is some content for the second card. It looks great on scroll!</p>
-                </div>
-            </div>
-            <div class="card fade-in">
-                <div class="card-content">
-                    <h2 class="text-lg font-semibold">Card Title 3</h2>
-                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
-                </div>
-            </div>
-            <!-- Add more cards as needed -->
         </div>
     </main>
 
