@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/annomymys2.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>Welcome | BTW - YURI IS STILL ON RAGE MODE</title>
+    <style>
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+            margin: 0;
+            padding-top: 0px; /* Adjust based on header height */
+            font-family: monospace;
+        }
+        .header-1, .header-2 {
+            position: fixed;
+            width: 100%;
+            z-index: 1000; /* Ensure it stays above other content */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .header-1 {
+            background-color: #1a1a1a; /* Dark background */
+            border-bottom: 1px solid #1a1a1a; /* Purple border-bottom */
+            opacity: 1;
+        }
+        .header-2 {
+            background-color: white; /* Light, colorful background */
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        .header-2.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .border-wave {
+            position: relative;
+            overflow: hidden;
+        }
+        .border-wave::before {
+            content: '';
+            position: absolute;
+            bottom: -10px; /* Adjust the position of the wave */
+            left: 0;
+            width: 100%;
+            height: 20px; /* Height of the wave */
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIHZpZXdCb3g9IjAgMCAxMCAxMCI+PHBhdGggZD0iTTEwLDEuNSA1LDEwTDEwLDIuNSIgZmlsbD0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1vcGFjaXR5PSIwLjIiLz48L3N2Zz4=') no-repeat center;
+            background-size: cover;
+            animation: wave 2s infinite linear;
+        }
+        @keyframes wave {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .card {
+            background-color: #333; /* Dark card background */
+            color: #fff; /* White text color */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+        .card-content {
+            padding: 10px;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <style>
+        /* Gradient Text Animation */
+        @keyframes colorWave {
+            0% {
+                color: dodgerblue;
+            }
+            50% {
+                color: #f06;
+            }
+            100% {
+                color: dodgerblue;
+            }
+        }
+
+        .grad {
+            font-size: 2em; /* Adjust the font size as needed */
+            font-weight: bold; /* Make text bold for better visibility */
+            animation: colorWave 6s infinite; /* 5 seconds duration, infinite loop */
+        }
+    </style>
+    <style>
+        .color-wave-background {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Adjust height as needed */
+            background: linear-gradient(45deg, #ff6f61, #d4a5a5, #7f8c8d, #ff6f61);
+            background-size: 400% 400%;
+            animation: colorWave2 10s ease infinite;
+            overflow: hidden;
+        }
+
+        /* Create the wave effect using keyframes */
+        @keyframes colorWave2 {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+    </style>
+    <!-- press Start 2P -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=press+Start+2P&display=swap">
+
+    <!-- Pixel Arial 11 -->
+    <style>
+        @font-face {
+            font-family: 'Pixel Arial 11';
+            src: url('https://www.fontsquirrel.com/fonts/pixel-arial-11') format('truetype');
+        }
+    </style>
+
+    <!-- Minecraftia -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Minecraftia&display=swap">
+
+    <!-- VT323 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+
+    <!-- 8-bit Arcade -->
+    <style>
+        @font-face {
+            font-family: '8-bit Arcade';
+            src: url('https://www.dafont.com/8-bit-arcade.font') format('truetype');
+        }
+    </style>
+
+    <!-- Bitstream Vera Sans Mono -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitstream+Vera+Sans+Mono&display=swap">
+
+    <style>
+        body {
+            margin: 20px;
+            font-family: monospace;
+        }
+        h1, h2, p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-1 text-gray-600 body-font bg-purple-500 border-wave" style="top:0;background-color: #1a1a1a;">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
+            <img src="../assets/annomymys2.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
+            <span class="ml-3 text-xl text-gray-100 md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400">YURI-IS-ON-RAGE-MODE</span>
+          </a>
+          <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 text-gray-100 hover:text-purple-700" href="WebEss/About.html">About Me</a>
+            <a class="mr-5 text-gray-100 hover:text-purple-700">Who are Fri3nds</a>
+            <a class="mr-5 text-gray-100 hover:text-purple-700">Read Articles</a>
+            <a class="mr-5 text-gray-100 hover:text-purple-700">My Projects</a>
+          </nav>
+          <style>
+            .glow-candle {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                background-color: #f5f5f5;
+                border: 0;
+                padding: 0.25rem 0.75rem;
+                text-base;
+                margin-top: 1rem;
+                margin-right: 0;
+                border-radius: 0.375rem; /* Adjust based on your design */
+                color: #333;
+                font-size: 1rem;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+                box-shadow: 0 0 10px rgba(255, 180, 0, 0.6);
+                animation: candle-glow 1.5s infinite alternate;
+                }
+
+                .glow-candle:hover {
+                background-color: #e0e0e0;
+                box-shadow: 0 0 15px rgba(255, 180, 0, 0.8);
+                animation: fire 1s infinite;
+                }
+
+                .glow-candle svg {
+                width: 1rem;
+                height: 1rem;
+                margin-left: 0.25rem;
+                }
+
+                @keyframes candle-glow {
+                0% {
+                    box-shadow: 0 0 10px rgba(255, 180, 0, 0.6);
+                    transform: scale(1);
+                }
+                100% {
+                    box-shadow: 0 0 20px rgba(255, 180, 0, 1);
+                    transform: scale(1.05);
+                }
+                }
+
+                @keyframes fire {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0 0 10px rgba(255, 180, 0, 0.8), 0 0 20px rgba(255, 150, 0, 0.6);
+                }
+                50% {
+                    transform: scale(1.1);
+                    box-shadow: 0 0 15px rgba(255, 180, 0, 1), 0 0 25px rgba(255, 150, 0, 0.8);
+                }
+                100% {
+                    transform: scale(1);
+                    box-shadow: 0 0 10px rgba(255, 180, 0, 0.8), 0 0 20px rgba(255, 150, 0, 0.6);
+                }
+                }
+
+          </style>
+          <a href="https://github.com/Yuri-Is-On-Rage-Mode" class="glow-candle inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-purple-200 rounded text-base mt-4 md:mt-0">
+            Github
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+          
+        </div>
+    </header>
+    <section>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <style>
+            /* Sidebar styles */
+            .sidebar {
+                transition: transform 0.3s ease;
+                max-height: calc(100vh - 2rem); /* Maximum height with padding */
+                overflow-y: auto; /* Scrollbar if content overflows */
+                padding-top: 4rem; /* Padding from the top */
+                padding-bottom: 1rem; /* Padding from the bottom */
+            }
+            .sidebar-hidden {
+                transform: translateX(100%);
+            }
+            .sidebar-visible {
+                transform: translateX(0);
+            }
+            /* Position the close button a little lower */
+            #closeSidebar {
+                position: absolute;
+                top: 1rem; /* Adjust as needed */
+                right: 1rem;
+                font-size: 2rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+        <header class="header-2 text-gray-600 body-font" style="top:0;">
+            <div class="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
+                <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
+                    <img src="../assets/SuperCoolIcon.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
+                </a>
+                <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-wrap items-center text-base justify-center md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400">
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="github">
+                        🐙 <span class="ml-2">Github</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="patreon">
+                        💼 <span class="ml-2">Patreon</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="twitter">
+                        🐦 <span class="ml-2">Twitter</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="linkedin">
+                        🔗 <span class="ml-2">LinkedIn</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="instagram">
+                        📸 <span class="ml-2">Instagram</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="facebook">
+                        📘 <span class="ml-2">Facebook</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="youtube">
+                        📹 <span class="ml-2">YouTube</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="tiktok">
+                        🎵 <span class="ml-2">TikTok</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="reddit">
+                        👽 <span class="ml-2">Reddit</span>
+                    </a>
+                    <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="snapchat">
+                        👻 <span class="ml-2">Snapchat</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        
+        <!-- Sidebar -->
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar sidebar-hidden fixed right-0 top-0 w-80 bg-gradient-to-r from-gray-300 to-gray-100 shadow-lg z-50 theme-background">
+            <div class="relative h-full">
+                <button id="closeSidebar" class="text-gray-500 hover:text-gray-800">&times;</button>
+                <div class="p-4">
+                    <h2 id="sidebarTitle" class="text-2xl font-semibold mb-4">Social Media</h2>
+                    <p id="sidebarContent">Click on a social media link to see the details here.</p>
+                </div>
+            </div>
+        </aside>
+
+        <style>
+            /* Sidebar styles */
+            .sidebar {
+                transition: all 0.3s ease; /* Smooth transition */
+            }
+
+            .sidebar-visible {
+                transform: translateX(0);
+            }
+
+            .sidebar-hidden {
+                transform: translateX(100%);
+            }
+
+            /* Add default theme background color and image */
+            .theme-background {
+                background-color: #282c34; /* Default background color */
+                background-image: url('../assets/default.jpg'); /* Replace with your default image path */
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            /* Sidebar header and content styles */
+            #sidebarTitle {
+                font-family: 'Arial'; /* Example font-family */
+            }
+
+            #sidebarContent {
+                color: white; /* Example foreground color for the content */
+                font-family: monospace; /* Example font-family */
+                margin-bottom:5px;
+            }
+
+            /* Close button styles */
+            #closeSidebar {
+                font-size: 24px;
+                cursor: pointer;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+            }
+        </style>
+
+        <script>
+            // JavaScript to handle sidebar visibility and content
+            document.querySelectorAll('a[data-target]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('data-target');
+                    const sidebar = document.getElementById('sidebar');
+                    const sidebarTitle = document.getElementById('sidebarTitle');
+                    const sidebarContent = document.getElementById('sidebarContent');
+
+                    // Set content, title color, gradient, and background image based on the clicked link
+                    // Set content, title color, gradient, and background image based on the clicked link
+// Set content, title color, gradient, and background image based on the clicked link
+switch(target) {
+    case 'github':
+        sidebarTitle.textContent = 'Github';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #6e5494, #8e44ad)'; /* Purple gradient */
+        sidebarContent.innerHTML = 'Github is where I keep my code because I enjoy mixing coding with chaos. It\'s like my digital junk drawer, but more organized. I don\'t use GitHub for daily tasks because I accidentally uploaded my grocery list there once.';
+        break;
+    case 'patreon':
+        sidebarTitle.textContent = 'Patreon';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #ff4242, #d63031)'; /* Red gradient */
+        sidebarContent.innerHTML = 'Patreon is like having a tip jar, but cooler. I use it to fund my endless pursuit of weird programming projects and cat memes. I don\'t use Patreon for food delivery because it turns out they don\'t deliver pizza with code snippets.';
+        break;
+    case 'twitter':
+        sidebarTitle.textContent = 'Twitter';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #1da1f2, #004a87)'; /* Twitter gradient */
+        sidebarContent.innerHTML = 'I don\'t have a Twitter account. I don\'t waste my time there because my tweets would probably be as useful as a tweet about avoiding tweets!';
+        break;
+    case 'linkedin':
+        sidebarTitle.textContent = 'LinkedIn';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #0077b5, #004182)'; /* LinkedIn gradient */
+        sidebarContent.innerHTML = 'I don\'t have a LinkedIn account. I don\'t serve or waste time there because my professional networking needs are fulfilled by shouting into the void!';
+        break;
+    case 'instagram':
+        sidebarTitle.textContent = 'Instagram';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #e1306c, #fd1d1d)'; /* Instagram gradient */
+        sidebarContent.innerHTML = 'I don\'t have an Instagram account. I don\'t waste time there because my cat photos are too high-quality for social media!';
+        break;
+    case 'facebook':
+        sidebarTitle.textContent = 'Facebook';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #1877f2, #3b5998)'; /* Facebook gradient */
+        sidebarContent.innerHTML = 'Facebook is considered an evil corporation, so I don\'t have an account or waste time there. I prefer to avoid the digital drama and save my energy for cat memes!';
+        break;
+    case 'youtube':
+        sidebarTitle.textContent = 'YouTube';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #ff0000, #cc0000)'; /* YouTube gradient */
+        sidebarContent.innerHTML = 'YouTube is where I watch cat videos and pretend I\'m learning something new. I don\'t use YouTube for cooking because my kitchen disasters aren\'t suitable for public viewing.';
+        break;
+    case 'tiktok':
+        sidebarTitle.textContent = 'TikTok';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #000000, #333333)'; /* TikTok gradient */
+        sidebarContent.innerHTML = 'I don\'t have a TikTok account. I don\'t waste time there because my dance moves are classified as “best kept secret”!';
+        break;
+    case 'reddit':
+        sidebarTitle.textContent = 'Reddit';
+        sidebarTitle.style.color = 'white'; /* White */
+        sidebar.style.background = 'linear-gradient(to right, #ff4500, #ff6f00)'; /* Reddit gradient */
+        sidebarContent.innerHTML = 'I don\'t have a Reddit account. I don\'t serve or waste time there because my life doesn\'t need the chaos of karma points!';
+        break;
+    case 'snapchat':
+        sidebarTitle.textContent = 'Snapchat';
+        sidebarTitle.style.color = '#212529'; /* Dark gray */
+        sidebar.style.background = 'linear-gradient(to right, #f9f9f9, #f0f0f0)'; /* Light yellow gradient */
+        sidebarContent.style.color = '#212529'; /* Dark gray */
+        sidebarContent.innerHTML = 'I don\'t have a Snapchat account. I don\'t waste time there because my goofy filters are better left to my private photo album!';
+        break;
+    default:
+        sidebarTitle.textContent = 'Social Media';
+        sidebarTitle.style.color = '212529'; /* Dark Gray */
+        sidebar.style.background = 'linear-gradient(to right, white, #eeeeee)'; /* Default gradient */
+        sidebarContent.innerHTML = '<img src="../assets/default-logo.png" class="bottom-right-logo" alt="Default Logo">';
+        sidebarContent.textContent = 'Click on a social media link to see the details here. Or don\'t. It\'s not like I\'ll be offended or anything... maybe just a little.';
+}
+
+
+            sidebar.classList.remove('sidebar-hidden');
+            sidebar.classList.add('sidebar-visible');
+        });
+    });
+
+    document.getElementById('closeSidebar').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.remove('sidebar-visible');
+        sidebar.classList.add('sidebar-hidden');
+    });
+
+    // Hide the sidebar on scroll
+    let isSidebarVisible = false;
+    window.addEventListener('scroll', function() {
+        if (isSidebarVisible) {
+            document.getElementById('sidebar').classList.remove('sidebar-visible');
+            document.getElementById('sidebar').classList.add('sidebar-hidden');
+            isSidebarVisible = false;
+        }
+    });
+
+    // Update the isSidebarVisible flag when sidebar becomes visible
+    document.querySelectorAll('a[data-target]').forEach(link => {
+        link.addEventListener('click', function() {
+            isSidebarVisible = true;
+        });
+    });
+</script>
+    
+    </section>
+    
+
+    <!-- Main content section with cards -->
+    <main class="container mx-auto p-5">
+        <div class="flex flex-wrap">
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 1</h2>
+                    <p>This is some content for the first card. It's dark and stylish!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 2</h2>
+                    <p>This is some content for the second card. It looks great on scroll!</p>
+                </div>
+            </div>
+            <div class="card fade-in">
+                <div class="card-content">
+                    <h2 class="text-lg font-semibold">Card Title 3</h2>
+                    <p>This is some content for the third card. Enjoy the smooth animations!</p>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const header1 = document.querySelector('.header-1');
+            const header2 = document.querySelector('.header-2');
+            
+            if (window.scrollY > 200) { // Adjust this value as needed
+                header1.style.opacity = '0';
+                header2.classList.add('active');
+            } else {
+                header1.style.opacity = '1';
+                header2.classList.remove('active');
+            }
+            
+            // Scroll animations for cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const viewportHeight = window.innerHeight;
+                
+                if (cardPosition < viewportHeight * 0.8) { // Show card if it's within 80% of viewport height
+                    card.classList.add('visible');
+                }
+            });
+        });
+    </script>
+
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4" style="background: white">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <span class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <span class="display-6 press-start">#<span class="grad press-start" style="font-size: 70px;">Yuri</span>#</span>
+                </span>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-2">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white" style="font-size: 25px; color: #212529;">🕵️ Fsociety</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="/bc-32/redirect/Fsociety/coms?id=f-soc-adm-act-001 bitstream" class="hover:underline bitstream">🏠 Site</a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="/bc-32/redirect/Fsociety/coms?id=f-soc-adm-act-002 bitstream" class="hover:underline bitstream">👥 Fri3nds Group</a>
+                        </li>
+                    </ul>
+                    <br>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white" style="font-size: 25px; color: #212529;">🔗 Social</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a href="https://github.com/Yuri-Is-On-Rage-Mode" class="hover:underline bitstream flex items-center">
+                                🐙 <span class="ml-2">Github</span>
+                            </a>
+                        </li>
+                        <li class="mb-4">
+                            <a href="https://www.patreon.com/akaYuri" class="hover:underline bitstream flex items-center">
+                                💼 <span class="ml-2">Patreon</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white" style="font-size: 25px; color: #212529;">⚖️ Legal</h2>
+                    <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                        <li class="mb-4">
+                            <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#privacy">🔒 Privacy</a>
+                        </li>
+                        <li class="mb-4">
+                            <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#security">🔐 Security</a>
+                        </li>
+                        <li class="mb-4">
+                            <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#legal">📜 Legal</a>
+                        </li>
+                        <li class="mb-4">
+                            <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#copyright">© Copyright</a>
+                        </li>
+                        <li class="mb-4">
+                            <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#disclaimer">🚫 Disclaimer</a>
+                        </li>
+                        <li class="mb-4">
+                            <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#terms">📋 Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="">
+                <span class="display-5 grad press-start" style="font-size: 18px;">Made with ❤️ by <a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank" style="color: #1e90ff; text-decoration: none; font-weight: bold;">Yuri</a> </span>
+            </span>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="WebEss/About.html" class="hover:underline me-4 md:me-6 press-start">📖 /About/</a>
+                </li>
+                <li>
+                    <a href="WebEss/Policies.html" class="hover:underline me-4 md:me-6 press-start">📜 /Policy/</a>
+                </li>
+                <li>
+                    <a href="https://github.com/Yuri-Is-On-Rage-Mode" class="hover:underline me-4 md:me-6 press-start">🐙 /Github/</a>
+                </li>
+                <li>
+                    <a href="../Blogs/index.html" class="hover:underline me-4 md:me-6 press-start">📝 /Articles/</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2008-2088 <a class="hover:underline" href="SomeThing/fri3nds.html">Fri3nds™</a>. All Rights Reserved.</span>
+    <br>
+</footer>
+
+</body>
+</html>
