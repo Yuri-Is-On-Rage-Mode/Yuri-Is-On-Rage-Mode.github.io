@@ -102,6 +102,19 @@
             }
         }
 
+        /* Gradient Text Animation for Python Comment Syntax Highlight */
+        @keyframes colorWave_forCode_Comment {
+            0% {
+                color: #6a9955; /* Typical green for Python comments */
+            }
+            50% {
+                color: #567d46; /* A slightly darker shade of green */
+            }
+            100% {
+                color: #6a9955; /* Back to the typical green */
+            }
+        }
+
         .grad {
             font-size: 2em; /* Adjust the font size as needed */
             font-weight: bold; /* Make text bold for better visibility */
@@ -164,20 +177,24 @@
 </head>
 <body>
     <header class="header-1 text-gray-600 body-font bg-purple-500 border-wave" style="top:0;background-color: #1a1a1a;">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
-            <img src="../assets/annomymys2.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
-            <span class="ml-3 text-l text-gray-100" style="font-family: monospace;font-size:15px;margin:10px;">/</span>
-            <img src="../assets/me_myself.ico" alt="Me_Myself Logo" class="w-10 h-10 rounded-full">
-            <span class="ml-3 text-l text-gray-100 grad" style="font-family: monospace;">Yuri</span>
-          </a>
-          <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-            <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="WebEss/About.html">About Me</a>
-            <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#my_work">My Work</a>
-            <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#social">Connect</a>
-          </nav>
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
+            <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
+                <img src="../assets/annomymys2.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
+                <span class="ml-3 text-l text-gray-100" style="font-family: monospace;font-size:15px;margin:10px;">/</span>
+                <img src="../assets/me_myself.ico" alt="Me_Myself Logo" class="w-10 h-10 rounded-full">
+                <span class="ml-3 text-l text-gray-100 grad" style="font-family: monospace;">Yuri</span>
+            </a>
+            <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#about">About Me</a>
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#project">My Work</a>
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#social">Connect</a>
+            </nav>
+            <nav class="flex flex-wrap items-center text-base justify-center space-x-5" id="second-nav">
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#my_work">Work Together or Hire Me</a>
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="https://github.com/Yuri-Is-On-Rage-Mode">Github</a>
+            </nav>
         </div>
-    </header>
+    </header>    
 
     <section>
             <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -210,7 +227,7 @@
             <header class="header-2 text-gray-600 body-font" style="top:0;border:1px solid dodgerblue;border-bottom: 5px solid dodgerblue;">
                 <div class="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
                     <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
-                        <img src="../assets/SuperCoolIcon.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
+                        <span class="grad" style="font-family: 'Press Start 2P', cursive;;">Yuri</span>
                     </a>
                     <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-wrap items-center text-base justify-center md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400">
                         <a class="mr-5 text-gray-800 hover:text-gray-600 flex items-center" href="#" data-target="github">
@@ -413,7 +430,7 @@
                 });
             });
             </script>
-             <script>
+            <script>
                 window.addEventListener('scroll', function() {
                     const header1 = document.querySelector('.header-1');
                     const header2 = document.querySelector('.header-2');
@@ -471,9 +488,21 @@
                     font-family: monospace;
                 }
 
+                .hero-heading2-fc{
+                    color:#212529;
+                    font-size: 30px;
+                    font-family: monospace;
+                }
+
                 .sub-heading1{
                     color:#212529;
                     font-size: 20px;
+                    font-family: monospace;
+                }
+
+                .sub-heading2{
+                    color:#212529;
+                    font-size: 15px;
                     font-family: monospace;
                 }
             
@@ -516,25 +545,112 @@
                 font-family: monospace;
             }
 
+            .ff-card-holder-red {
+                display: flex;
+            }
+
+            .ff-card-holder-red .ff-card {
+                border-radius: 3px;
+                border:1px solid #f06;
+                border-top:10px solid #f06;
+                padding:10px;
+                margin:5px;
+            }
+        
+            .ff-card-holder-red .ff-card .text-s1{
+                color:#212529;
+                font-size:17px;
+                font-family: monospace;
+            }
+
+            .codeanic-code {
+                background-color: #212529;
+                border-radius: 5px;
+                border-top:10px solid #555e68;
+                padding:5px;
+                color:white;
+            }
+
+
+            .codeanic-code span{
+                color:white;
+            }
+
+            .codeanic-code ccc {
+                /* font-size: 2em;  Adjust the font size as needed */
+                font-weight: bold; /* Make text bold for better visibility */
+                animation: colorWave 6s infinite; /* 5 seconds duration, infinite loop */
+            }
+
+            .codeanic-code com {
+                /* font-size: 2em;  Adjust the font size as needed */
+                font-weight: bold; /* Make text bold for better visibility */
+                animation: colorWave_forCode_Comment 6s infinite; /* 5 seconds duration, infinite loop */
+            }
+
+            .codeanic-code ic {
+                padding-left:10px;
+            }
+
         </style>
-        <div class="main-hero-thing">
+
+        <div class="main-hero-thing" style="height:653px;">
             <div class="part-ff-l" style="padding:50px;">
                 <span class="sub-heading1">
-                    <i>- Hi, I am Hamza</i>
+                    <i>- Greetings! I am <span class="grad-ns">Yuri-Is-On-Rage-Mode</span></i>
                 </span>
                 <br>
                 <span class="hero-heading1">
-                    <span class="hero-heading1-fc">You might know me as</span>
+                    <span class="hero-heading2-fc">You might know me as</span>
                     <br>
                     <span style="padding-left:25px;" class="grad">Yuri</span>
                 </span>
-                <!-- <br>
-                <span class="sub-heading1 b-r">
-                    <i>- I Love Cats</i>
-                </span> -->
-            </div>
-            <div class="part-ff-r">
-                <div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="codeanic-code">
+                    <span class="sub-heading2">
+                        <i><ccc>pragma</ccc> Welcome_to_the_YuriVerse <ccc>version(</ccc>1<ccc>)</ccc></i>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <com> # This is <span class="grad-ns">my world</span>, where every line of code tells a <span class="grad-ns">story</span>.</com>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <i><ccc>void</ccc> main() <ccc>{</ccc></i>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <ic><i>stdEnv <ccc>+=</ccc> <ccc>appendBackground(</ccc>Logic<ccc>)</ccc> <ccc>AND</ccc> creativity<ccc>.pop()</ccc>;</i></ic>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <ic><i>stdEnv <ccc>+=</ccc> <span class="grad-ns">bugs</span>.tremble() <ccc>AND</ccc> <ccc>run(</ccc>for_Cover<ccc>)</ccc>;</i></ic>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <ic><i>stdEnv <ccc>+=</ccc> (code != <ccc>__Written__</ccc>) <ccc>crafted:</ccc> with <ccc>__Passion__</ccc>;</i></ic>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <ic><i>stdEnv<ccc>.Println(</ccc>'Turning dreams into reality!'<ccc>)</ccc>;</i></ic>
+                    </span>
+                    <br>
+                    <span class="sub-heading2">
+                        <i><ccc>}</ccc></i>
+                    </span>
+                </div>
+            </div>            
+            <div class="part-ff-r" style="background:linear-gradient(to bottom left,dodgerblue,#f06);">
+                <style>
+                    .main-img-bar-v img {
+                        border:2px solid white;
+                    }
+                </style>
+                <div class="main-img-bar-v">
+                    <br>
                     <div style="display: flex;">
                         <img src="../assets/Imgs/animal_like_thing.jpg" alt="Kat Image1">
                         <img src="../assets/Cats/cat2.jpg" alt="Kat Image1">
@@ -543,6 +659,7 @@
                         <img src="../assets/Imgs/Stolen_Avatar.jpg" alt="Kat Image1">
                         
                     </div>
+                    <br>
                     <div style="display: flex;">
                         <img src="../assets/Cats/cat5.jpg" alt="Kat Image1">
                         <img src="../assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
@@ -550,10 +667,19 @@
                         <img src="../assets/Imgs/Party_All_Night.jpg" alt="Kat Image1">
                         <img src="../assets/Cats/cat6.jpg" alt="Kat Image1">
                     </div>
+                    <br>
+                    <div style="display: flex;">
+                        <img src="../assets/Cats/cat7.jpg" alt="Kat Image1">
+                        <img src="../assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
+                        <img src="../assets/Imgs/Green_Code.jpg" alt="Kat Image1">
+                        <img src="../assets/Imgs/Coll_Coder.jpg" alt="Kat Image1">
+                        <img src="../assets/Imgs/Mark_911.jpg" alt="Kat Image1">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="main-hero-thing">
+
+        <div class="main-hero-thing" id="about">
             <style>
                 .space-a-little {
                     padding:2px;
@@ -562,29 +688,31 @@
             <div class="part-ff-r">
                 <div>
                     <div style="display: flex;">
-
                         <img src="../assets/Imgs/Mi_Lab.jpg" alt="Kat Image1" class="space-a-little">
                         <img src="../assets/Imgs/Rubot.jpg" alt="Kat Image2"  class="space-a-little">
-                        <img src="../assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3" class="space-a-little">
-                        
+                        <img src="../assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3" class="space-a-little">  
                     </div>
                     <div style="display: flex;">
                         <span class="sub-heading1" style="padding:10px;border:1px solid dodgerblue;margin:10px;border-top:6px solid dodgerblue;border-bottom:6px solid dodgerblue;font-size:13px;">
                             <i>Did you know? Programmers are like wizards 🧙‍♂️—they write code to create magic, but only they can understand the spell. And their natural enemy? The bug. 🐛😂</i>
                         </span>                                        
-                    </div>
+                    </div>            
                     <div style="display: flex;">
                         <img src="../assets/Imgs/The_Lair.jpg" alt="Kat Image1" class="space-a-little">
                         <img src="../assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2"  class="space-a-little">
                         <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3" class="space-a-little">
-                        
+                    </div> 
+                    <div style="display: flex;">
+                        <span class="sub-heading1" style="padding:10px; border:1px solid dodgerblue; margin:10px; border-top:6px solid dodgerblue; border-bottom:6px solid dodgerblue; font-size:13px;">
+                            <i>Did you hear? Programmers are like chefs 🍳—they mix ingredients (code) to cook up a delicious program, but when something goes wrong, it's always a case of "burnt toast"! 🍞🔥😂</i>
+                        </span>                                        
                     </div> 
                 </div>
             </div>
             <div class="part-ff-l"  style="padding:50px;width:102%">
                 <div class="ff-card-holder">
-                    <div class="ff-card">
-                        <span class="hero-heading1-fc">About Me</span>
+                    <div class="ff-card" style="width:50%;">
+                        <span class="hero-heading1-fc">👤 About Me</span>
                         <br>
                         <span class="text-s1 grad">They call me Yuri</span>
                         <br>
@@ -594,20 +722,160 @@
                         <br>
                         <span class="text-s1" style="padding-left:10px;">⭐ I was born on October 1, 2008, in Karachi, Pakistan. Karachi is a big city for a tech enthusiast like me. I discovered programming when I was 9, and I've been in love with it ever since. Currently, I'm still in school LOL, but I'm not less than a full-time programmer. 😆</span>
                     </div>  
-                    <div class="ff-card">
-                        <span class="hero-heading1-fc">Programming</span>
+                    <div class="ff-card" style="width:50%;">
+                        <span class="hero-heading1-fc">💻 Programming</span>
                         <br>
-                        <span class="text-s1" style="padding-left:10px;">⭐ I know various programming languages such as Python, JavaScript, C++, and more. 🧑‍💻</span>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ I know various programming languages such as Python, JavaScript, C#, and more. 🧑‍💻</span>
                         <br>
                         <br>
                         <span class="text-s1" style="padding-left:10px;">⭐ I have created many projects ranging from web applications to game development. 🚀</span>
                         <br>
                         <br>
-                        <span class="text-s1" style="padding-left:10px;">⭐ I love to collaborate on open-source projects and share knowledge with fellow coders. 🤝</span>
-                    </div>                                                          
+                        <span class="text-s1" style="padding-left:10px;">⭐ I love to collaborate on open-source projects and share knowledge with fellow coders. 🤝</span> 
+                    </div>                                                       
+                </div>                
+            </div>
+        </div>
+
+        <div style="width: 100%; height: 92px;background: linear-gradient(to right, dodgerblue,#f06);">
+            <style>
+                .da_spot {
+                    display: flex;
+                    justify-content: center; /* Center horizontally */
+                    align-items: center; /* Center vertically (if necessary) */
+                    flex-wrap: wrap; /* Allow images to wrap onto multiple lines */
+                    /*gap: 10px;  Optional: add space between images */
+                }
+        
+                .da_spot img {
+                    width: 92px;
+                    height: 92px;
+                    border: 1px solid white;
+                }
+            </style>
+            <div class="da_spot">
+                <img src="../assets/Imgs/Mi_Lab.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Rubot.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3">
+                <img src="../assets/Cats/cat2.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Annoying_Kids_Watching_Something.jpg" alt="Kat Image1">
+                <img src="../assets/Cats/cat3.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Green_Code.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Coll_Coder.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Random_Computer_Screen.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Party_All_Night.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
+            </div>
+        </div>      
+
+        <div class="main-hero-thing">
+            <div class="part-ff-r" style="padding:50px;width:110%">
+                <div class="ff-card-holder-red">
+                    <div class="ff-card" style="width:50%;">
+                        <span class="hero-heading2-fc">🔍 Currently Learning</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ I’m diving deep into some pretty intense stuff like Brainfuck—because why not challenge myself with the weirdest language ever? 🧠😆</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ I’m also wrestling with React, that supposedly "user-friendly" framework that’s kind of like a puzzle wrapped in a mystery. 🧩🤔</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ But let’s not forget—I’m an ASP.NET maestro. It’s my bread and butter, and I’ve got it down to a fine art. 🎨🚀</span>
+                    </div>                    
+                    <div class="ff-card" style="width:50%;">
+                        <span class="hero-heading2-fc">✨ Interests</span>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ I’m all about programming and hacking! Whether it’s cracking codes or making awesome projects, I’m in my element. 💻🔍</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ MMA? Oh yeah! I’m into high-flying kicks and intense sparring. It’s my way of staying active and pumped up! 🥋🔥</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ Karate adds a bit of martial arts magic to my life. It’s all about focus, respect, and flexing those muscles! 🥋💪</span>
+                    </div>                                                                                                     
+                </div>
+                <div class="ff-card-holder-red">
+                    <div class="ff-card" style="width:100%;">
+                        <span class="hero-heading2-fc">⚡ Fun Fact</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ I’ve developed my own programming language called NueScript. It’s been a wild ride building it from monkey-template, not scratch! 🚀🖥️</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ I’m excited about Svelte—it’s my next destination after mastering React. I love how it simplifies things and makes building apps a breeze! 🌪️✨</span>
+                    </div>                                                                                                                               
+                </div>                
+            </div>
+            <div class="part-ff-l" style="padding:2px;">
+                <style>
+                    .da_spot2 img {
+                        width: 192px;
+                        height: 182px;
+                        border: 1px solid white;
+                    }
+                </style>
+                <div class="da_spot2">
+                    <div style="display: flex;">
+                        <img src="../assets/Fun/Tony-El_Cucuy.jpg" alt="Kat Image1">
+                        <img src="../assets/Fun/Habib.jpg" alt="Kat Image2">
+                    </div>
+                    <div style="display: flex;">
+                        <span class="sub-heading1" style="padding:10px;border:1px solid #f06;margin:10px;border-top:6px solid #f06;border-bottom:6px solid #f06;font-size:13px;">
+                            <i>Did you know? MMA fighters are like code compilers— they both take a lot of work and training to perfect! 🥋💥 But unlike code, fighters don’t get bugs—they get punches! 😂🥊</i>
+                        </span>                                        
+                    </div>                              
+                    <div style="display: flex;">
+                        <img src="../assets/Fun/Elon.jpg" alt="Kat Image3"> 
+                        <img src="../assets/Fun/js_Sucks.jpg" alt="Kat Image3">  
+                    </div> 
+                    <div style="display: flex;">
+                        <span class="sub-heading1" style="padding:10px;border:1px solid #f06;margin:10px;border-top:6px solid #f06;border-bottom:6px solid #f06;font-size:13px;">
+                            <i>BTW, Facebook is like that annoying bug in your code—always around and watching you. Watch out for the tech giant! 👀📱</i>
+                        </span>                                        
+                    </div>                                       
                 </div>
             </div>
         </div>
+
+        <div style="width: 100%; height: 92px;background: linear-gradient(to right, dodgerblue,#f06);">
+            <style>
+                .da_spot {
+                    display: flex;
+                    justify-content: center; /* Center horizontally */
+                    align-items: center; /* Center vertically (if necessary) */
+                    flex-wrap: wrap; /* Allow images to wrap onto multiple lines */
+                    /*gap: 10px;  Optional: add space between images */
+                }
+        
+                .da_spot img {
+                    width: 92px;
+                    height: 92px;
+                    border: 1px solid white;
+                }
+            </style>
+            <div class="da_spot">
+                <img src="../assets/Fun/js_Sucks.jpg" alt="Kat Image3">  
+                <img src="../assets/Imgs/Annoying_Kids_Watching_Something.jpg" alt="Kat Image1">
+                <img src="../assets/Cats/cat2.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Random_Computer_Screen.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/Green_Code.jpg" alt="Kat Image1">
+                <img src="../assets/Cats/cat3.jpg" alt="Kat Image1">
+                <img src="../assets/Fun/Elon.jpg" alt="Kat Image3"> 
+                <img src="../assets/Fun/Tony-El_Cucuy.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Mi_Lab.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Rubot.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
+                <img src="../assets/Fun/Habib.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
+            </div>            
+        </div>  
     </section>
 
 
