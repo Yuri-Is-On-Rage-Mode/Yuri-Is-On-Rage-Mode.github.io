@@ -620,7 +620,6 @@
                         height: 653px;
                         overflow: hidden;
                         border: 2px solid #ddd;
-                        border-radius: 10px;
                         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
                         position: relative;
                     }
@@ -849,146 +848,272 @@
                         </div>
                     </div>
                     <div style="width: 60%;">
-                        <div>
-                            <style>
-                                .whats_new_div {
-                                    margin: 5px;
-                                    padding: 10px;
-                                    border: 1px solid cyan;
-                                    border-radius: 1px;
-                                    background-color: white;
-                                    color:#212529;
-                                    font-family: monospace;
-                                }
-                                .whats-new-date {
-                                    color: dodgerblue;
-                                    font-size: 16px;
-                                }
-                                .whats-new-link {
-                                    color: dodgerblue;
-                                    font-size: 15px;
-                                    text-decoration: none;
-                                }
-                                .whats-new-link:hover {
-                                    text-decoration: underline;
-                                }
-                            </style>
-                            <div class="whats_new_div">
-                                Loading...
-                            </div>
-                            <script>
-                                async function fetchWhatsNew() {
-                                    try {
-                                        const response = await fetch('./JsonD/whats_new.json');
-                                        if (!response.ok) {
-                                            throw new Error('Network response was not ok: ' + response.statusText);
-                                        }
-                                        const data = await response.json();
-                                        displayWhatsNew(data);
-                                    } catch (error) {
-                                        console.error('Error fetching whats_new.json:', error);
-                                        displayFallbackMessage();
-                                    }
-                                }
-                            
-                                function displayWhatsNew(data) {
-                                    const latestPostKey = Object.keys(data).reduce((a, b) => Math.max(a, b), -Infinity);
-                                    const latestPost = data[latestPostKey];
-                            
-                                    const whatsNewDiv = document.querySelector('.whats_new_div');
-                                    whatsNewDiv.innerHTML = `
-                                        <div>
-                                            <span>
-                                                <span class="whats-new-date">${latestPost.date}</span> ${latestPost.text}
-                                                <a href="${latestPost.link}" class="whats-new-link">Read More</a>
-                                            </span>
-                                        </div>
-                                    `;
-                                }
-                            
-                                function displayFallbackMessage() {
-                                    const whatsNewDiv = document.querySelector('.whats_new_div');
-                                    whatsNewDiv.innerHTML = `
-                                        <div>
-                                            <span>
-                                                <span class="whats-new-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
-                                            </span>
-                                        </div>
-                                    `;
-                                }
-                            
-                                document.addEventListener('DOMContentLoaded', fetchWhatsNew);
-                            </script>
+                        <style>
+                            .whats_new_div, .updates_on_div {
+                                margin: 5px;
+                                padding: 10px;
+                                border-radius: 5px;
+                                background-color: white;
+                                font-family: monospace;
+                            }
+                            .whats_new_div {
+                                border: 1px solid cyan;
+                                color: #212529;
+                            }
+                            .whats-new-date {
+                                color: dodgerblue;
+                                font-size: 16px;
+                            }
+                            .whats-new-link {
+                                color: dodgerblue;
+                                font-size: 15px;
+                                text-decoration: none;
+                            }
+                            .whats-new-link:hover {
+                                text-decoration: underline;
+                            }
+                            .updates_on_div {
+                                border: 1px solid red;
+                                color: #f06;
+                            }
+                            .updates-on-date {
+                                color: #f06;
+                                font-size: 16px;
+                            }
+                            .updates-on-link {
+                                color: #f06;
+                                font-size: 15px;
+                                text-decoration: none;
+                            }
+                            .updates-on-link:hover {
+                                text-decoration: underline;
+                            }
+                        </style>
+                        <div class="whats_new_div">
+                            Loading What's New...
                         </div>
+                        <div class="updates_on_div">
+                            Loading Some Random Shit...
+                        </div>
+                        <script>
+                            async function fetchData(url, displayFunc, fallbackFunc) {
+                                try {
+                                    const response = await fetch(url);
+                                    if (!response.ok) {
+                                        throw new Error('Network response was not ok: ' + response.statusText);
+                                    }
+                                    const data = await response.json();
+                                    displayFunc(data);
+                                } catch (error) {
+                                    console.error('Error fetching data:', error);
+                                    fallbackFunc();
+                                }
+                            }
+                    
+                            function displayWhatsNew(data) {
+                                const latestPostKey = Object.keys(data).reduce((a, b) => Math.max(a, b), -Infinity);
+                                const latestPost = data[latestPostKey];
+                                const whatsNewDiv = document.querySelector('.whats_new_div');
+                                whatsNewDiv.innerHTML = `
+                                    <div>
+                                        <span>
+                                            <span class="whats-new-date">${latestPost.date}</span> ${latestPost.text}
+                                            <a href="${latestPost.link}" class="whats-new-link">Read More</a>
+                                        </span>
+                                    </div>
+                                `;
+                            }
+                    
+                            function displayUpdatesOnSite(data) {
+                                const latestPostKey = Object.keys(data).reduce((a, b) => Math.max(a, b), -Infinity);
+                                const latestPost = data[latestPostKey];
+                                const updatesOnDiv = document.querySelector('.updates_on_div');
+                                updatesOnDiv.innerHTML = `
+                                    <div>
+                                        <span>
+                                            <span class="updates-on-date">${latestPost.date}</span> ${latestPost.text}
+                                            <a href="${latestPost.link}" class="updates-on-link">Read More</a>
+                                        </span>
+                                    </div>
+                                `;
+                            }
+                    
+                            function displayFallbackMessageWhatsNew() {
+                                const whatsNewDiv = document.querySelector('.whats_new_div');
+                                whatsNewDiv.innerHTML = `
+                                    <div>
+                                        <span>
+                                            <span class="whats-new-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
+                                        </span>
+                                    </div>
+                                `;
+                            }
+                    
+                            function displayFallbackMessageUpdatesOn() {
+                                const updatesOnDiv = document.querySelector('.updates_on_div');
+                                updatesOnDiv.innerHTML = `
+                                    <div>
+                                        <span>
+                                            <span class="updates-on-date">N/A</span> Sorry, we couldn't fetch the latest version control news.
+                                        </span>
+                                    </div>
+                                `;
+                            }
+                    
+                            document.addEventListener('DOMContentLoaded', () => {
+                                fetchData('./JsonD/whats_new.json', displayWhatsNew, displayFallbackMessageWhatsNew);
+                                fetchData('./JsonD/updates_on_site.json', displayUpdatesOnSite, displayFallbackMessageUpdatesOn);
+                            });
+                        </script>
+
                         <div>
                             <style>
-                                .updates_on_div {
-                                    margin: 5px;
+                                .slider {
+                                    display: flex;
+                                    overflow-x: auto;
+                                    width: 80%;
                                     padding: 10px;
-                                    border: 1px solid red;
-                                    border-radius: 1px;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                                     background-color: white;
-                                    color:#f06;
-                                    font-family: monospace;
+                                    border-radius: 10px;
                                 }
-                                .updates-on-date {
-                                    color: #f06;
+                                .card {
+                                    flex: 0 0 250px;
+                                    margin: 10px;
+                                    padding: 20px;
+                                    background-color: #fff;
+                                    border-radius: 10px;
+                                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                    transition: transform 0.3s;
+                                }
+                                .card:hover {
+                                    transform: scale(1.05);
+                                }
+                                .date {
+                                    color: dodgerblue;
+                                    font-size: 14px;
+                                    margin-bottom: 10px;
+                                }
+                                .text {
+                                    color: #333;
                                     font-size: 16px;
+                                    margin-bottom: 10px;
                                 }
-                                .updates-on-link {
-                                    color: #f06;
-                                    font-size: 15px;
+                                .link {
+                                    color: dodgerblue;
                                     text-decoration: none;
+                                    font-size: 14px;
                                 }
-                                .updates-on-link:hover {
+                                .link:hover {
                                     text-decoration: underline;
                                 }
                             </style>
-                            <div class="updates_on_div">
-                                Loading...
+                            <div class="slider">
+                                Loading Latest Releases...
                             </div>
                             <script>
-                                async function fetchWhatsNew() {
+                                async function fetchLatestReleases() {
                                     try {
-                                        const response = await fetch('./JsonD/updates_on_site.json');
+                                        const response = await fetch('./JsonD/LatestReleases.json');
                                         if (!response.ok) {
                                             throw new Error('Network response was not ok: ' + response.statusText);
                                         }
                                         const data = await response.json();
-                                        displayWhatsNew(data);
+                                        displayLatestReleases(data);
                                     } catch (error) {
-                                        console.error('Error fetching updates_on_site.json:', error);
+                                        console.error('Error fetching LatestReleases.json:', error);
                                         displayFallbackMessage();
                                     }
                                 }
-                            
-                                function displayWhatsNew(data) {
-                                    const latestPostKey = Object.keys(data).reduce((a, b) => Math.max(a, b), -Infinity);
-                                    const latestPost = data[latestPostKey];
-                            
-                                    const whatsNewDiv = document.querySelector('.updates_on_div');
-                                    whatsNewDiv.innerHTML = `
-                                        <div>
-                                            <span>
-                                                <span class="updates-on-date">${latestPost.date}</span> ${latestPost.text}
-                                                <a href="${latestPost.link}" class="updates-on-link">Read More</a>
-                                            </span>
-                                        </div>
-                                    `;
+                        
+                                function displayLatestReleases(data) {
+                                    const sortedKeys = Object.keys(data).sort((a, b) => b - a).slice(0, 10);
+                                    const slider = document.querySelector('.slider');
+                                    slider.innerHTML = '';
+                        
+                                    sortedKeys.forEach(key => {
+                                        const post = data[key];
+                                        const card = document.createElement('div');
+                                        card.className = 'card';
+                                        card.innerHTML = `
+                                            <div class="date">${post.date}</div>
+                                            <div class="text">${post.text}</div>
+                                            <a href="${post.link}" class="link">Read More</a>
+                                        `;
+                                        slider.appendChild(card);
+                                    });
                                 }
-                            
+                        
                                 function displayFallbackMessage() {
-                                    const whatsNewDiv = document.querySelector('.updates_on_div');
-                                    whatsNewDiv.innerHTML = `
-                                        <div>
-                                            <span>
-                                                <span class="updates-on-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
-                                            </span>
-                                        </div>
-                                    `;
+                                    const dummyData = [
+                                        {
+                                            date: "1-Jan-2024",
+                                            text: "This is a dummy post 1.",
+                                            link: "/dummy1.html"
+                                        },
+                                        {
+                                            date: "2-Jan-2024",
+                                            text: "This is a dummy post 2.",
+                                            link: "/dummy2.html"
+                                        },
+                                        {
+                                            date: "3-Jan-2024",
+                                            text: "This is a dummy post 3.",
+                                            link: "/dummy3.html"
+                                        },
+                                        {
+                                            date: "4-Jan-2024",
+                                            text: "This is a dummy post 4.",
+                                            link: "/dummy4.html"
+                                        },
+                                        {
+                                            date: "5-Jan-2024",
+                                            text: "This is a dummy post 5.",
+                                            link: "/dummy5.html"
+                                        },
+                                        {
+                                            date: "6-Jan-2024",
+                                            text: "This is a dummy post 6.",
+                                            link: "/dummy6.html"
+                                        },
+                                        {
+                                            date: "7-Jan-2024",
+                                            text: "This is a dummy post 7.",
+                                            link: "/dummy7.html"
+                                        },
+                                        {
+                                            date: "8-Jan-2024",
+                                            text: "This is a dummy post 8.",
+                                            link: "/dummy8.html"
+                                        },
+                                        {
+                                            date: "9-Jan-2024",
+                                            text: "This is a dummy post 9.",
+                                            link: "/dummy9.html"
+                                        },
+                                        {
+                                            date: "10-Jan-2024",
+                                            text: "This is a dummy post 10.",
+                                            link: "/dummy10.html"
+                                        }
+                                    ];
+                        
+                                    const slider = document.querySelector('.slider');
+                                    slider.innerHTML = '';
+                        
+                                    dummyData.forEach(post => {
+                                        const card = document.createElement('div');
+                                        card.className = 'card';
+                                        card.innerHTML = `
+                                            <div class="date">${post.date}</div>
+                                            <div class="text">${post.text}</div>
+                                            <a href="${post.link}" class="link">Read More</a>
+                                        `;
+                                        slider.appendChild(card);
+                                    });
                                 }
-                            
-                                document.addEventListener('DOMContentLoaded', fetchWhatsNew);
+                        
+                                document.addEventListener('DOMContentLoaded', fetchLatestReleases);
                             </script>
                         </div>
                     </div>
