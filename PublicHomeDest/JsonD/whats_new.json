@@ -1,0 +1,12 @@
+{
+    "48": {
+        "date": "1-june-2024",
+        "text": "We are launching a new product",
+        "link": "/NewProduct/Demo1.html"
+    },
+    "49": {
+        "date": "7-june-2024",
+        "text": "We are launching a newer version of that new product",
+        "link": "/NewProduct/Demo2.html"
+    }
+}

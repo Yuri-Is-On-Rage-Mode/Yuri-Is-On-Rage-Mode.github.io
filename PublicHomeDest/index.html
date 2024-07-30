@@ -186,11 +186,11 @@
             </a>
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
                 <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#about">About Me</a>
-                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#project">My Work</a>
-                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#social">Connect</a>
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#latest">Latest on Yuri</a>
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#social">Social Media</a>
             </nav>
             <nav class="flex flex-wrap items-center text-base justify-center space-x-5" id="second-nav">
-                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#my_work">Work Together or Hire Me</a>
+                <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="#connect">Work Together or Hire Me</a>
                 <a class="mr-5 text-gray-100 lnk-top-nav-bar-hvr" href="https://github.com/Yuri-Is-On-Rage-Mode">Github</a>
             </nav>
         </div>
@@ -650,6 +650,62 @@
                     }
                 </style>
                 <div class="main-img-bar-v">
+                    <style>
+                        .whats_new_div {
+                            margin: 20px;
+                            padding: 20px;
+                            border: 1px solid #ccc;
+                            border-radius: 8px;
+                            background-color: #f9f9f9;
+                        }
+                        .whats-new-date {
+                            color: dodgerblue;
+                            font-size: 16px;
+                        }
+                        .whats-new-link {
+                            color: dodgerblue;
+                            font-size: 15px;
+                            text-decoration: none;
+                        }
+                        .whats-new-link:hover {
+                            text-decoration: underline;
+                        }
+                    </style>
+                    <div class="whats_new_div">
+                        Loading...
+                    </div>
+                    <script>
+                        async function fetchWhatsNew() {
+                            try {
+                                const response = await fetch('./JsonD/whats_new.json');
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok: ' + response.statusText);
+                                }
+                                const data = await response.json();
+                                displayWhatsNew(data);
+                            } catch (error) {
+                                console.error('Error fetching whats_new.json:', error);
+                                document.querySelector('.whats_new_div').innerHTML = 'Failed to load the latest news: ' + error.message;
+                            }
+                        }
+                    
+                        function displayWhatsNew(data) {
+                            const latestPostKey = Object.keys(data).reduce((a, b) => Math.max(a, b), -Infinity);
+                            const latestPost = data[latestPostKey];
+                    
+                            const whatsNewDiv = document.querySelector('.whats_new_div');
+                            whatsNewDiv.innerHTML = `
+                                <div>
+                                    <span>
+                                        <span class="whats-new-date">${latestPost.date}</span> ${latestPost.text}
+                                        <a href="${latestPost.link}" class="whats-new-link">Read More</a>
+                                    </span>
+                                </div>
+                            `;
+                        }
+                    
+                        document.addEventListener('DOMContentLoaded', fetchWhatsNew);
+                    </script>
                     <br>
                     <div style="display: flex;">
                         <img src="../assets/Imgs/animal_like_thing.jpg" alt="Kat Image1">
@@ -733,6 +789,9 @@
                         <br>
                         <br>
                         <span class="text-s1" style="padding-left:10px;">⭐ I love to collaborate on open-source projects and share knowledge with fellow coders. 🤝</span> 
+                    </div> 
+                    <div class="ff-card">
+                    </div> <div class="ff-card">
                     </div>                                                       
                 </div>                
             </div>
@@ -775,6 +834,10 @@
         <div class="main-hero-thing">
             <div class="part-ff-r" style="padding:50px;width:110%">
                 <div class="ff-card-holder-red">
+                    <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div> 
                     <div class="ff-card" style="width:50%;">
                         <span class="hero-heading2-fc">🔍 Currently Learning</span>
                         <br>
@@ -808,7 +871,10 @@
                         <br>
                         <br>
                         <span class="text-s1" style="padding-left:10px;">⭐ I’m excited about Svelte—it’s my next destination after mastering React. I love how it simplifies things and makes building apps a breeze! 🌪️✨</span>
-                    </div>                                                                                                                               
+                    </div>  
+                    <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div>                                                                                                                              
                 </div>                
             </div>
             <div class="part-ff-l" style="padding:2px;">
@@ -876,10 +942,131 @@
                 <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
             </div>            
         </div>  
+
+        <div class="main-hero-thing" id="social">
+            <div class="part-ff-r" style="padding:50px;width:110%">
+                <br>
+                <span class="hero-heading1-fc">Social Media</span>
+                <div class="ff-card-holder-red">
+                    <div class="ff-card" style="width:50%;">
+                        <span class="hero-heading2-fc"><span class="grad-ns">G</span>ithub</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ Github is like my techie playground where I stash all my code adventures. It's organized chaos, and yes, I once uploaded my grocery list by mistake. Oops!</span>
+                        <br>
+                        <br>
+                        <span style="padding:5px; border:1px solid #f06;color:#212529;font-family: monospace;">🎉 Check out my Github antics <a href="https://github.com/Yuri-Is-On-Rage-Mode"><u>here at Yuri-Is-On-Rage-Mode</u></a>!</span><br>
+                    </div>                    
+                    <div class="ff-card" style="width:50%;">
+                        <span class="hero-heading2-fc"><span class="grad-ns">P</span>atreon</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ Patreon is my digital tip jar, but way cooler. It helps fuel my quirky coding projects and obsession with cat memes. And no, you can't order pizza with it... I checked.</span>
+                        <br>
+                        <br>
+                        <span style="padding:5px; border:1px solid #f06;color:#212529;font-family: monospace;">🎉 Swing by my Patreon page <a href="https://www.patreon.com/akaYuri"><u>here at akaYuri</u></a>!</span>
+                        <br>
+                        <br>
+                        <span style="padding:5px; border:1px solid #f06;color:#212529;font-family: monospace;">🚀 No paid stuff yet, but keep your eyes peeled... epic content is on the way! 😎</span>
+                    </div>  
+                    <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div>                                                                                                                    
+                </div>       
+            </div>
+        </div> 
+
+        <div class="main-hero-thing" id="connect">
+            <div class="part-ff-r" style="padding:50px;width:110%">
+                <br>
+                <span class="hero-heading1-fc">Wanna Collaborate?</span>
+                <div class="ff-card-holder-red">
+                    <div class="ff-card">
+                    </div> 
+                    <div class="ff-card">
+                    </div> 
+                    <div class="ff-card">
+                        <span class="hero-heading2-fc"><span class="grad-ns">I'm </span>always free</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ Let's join forces and create something amazing! Whether it's coding, brainstorming, or just having a fun chat about tech, I'm all in. 🚀🤝</span>
+                        <br>
+                        <br>
+                        <span class="text-s1" style="padding-left:10px;">⭐ Reach out to me for collaboration on exciting projects, sharing ideas, or even for a friendly techie debate. Together, we can make magic happen! ✨💡</span>
+                    </div> 
+                    <div class="ff-card">
+                    </div> 
+                    <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div> 
+                    <div class="ff-card">
+                        <span class="hero-heading2-fc"><span class="grad-ns">EMAIL</span></span>
+                        <br>
+                        <span class="sub-heading1">hamzasufyanmacrohard@gmail.com</span>
+                        <br>
+                        <span class="hero-heading2-fc"><span class="grad-ns">SOCIAL MEDIA</span></span>
+                        <br>
+                        <span class="sub-heading1"><a href="https://www.patreon.com/akaYuri"><u><i>akaYuri - Patreon</i></u></a></span>
+                        <br>
+                        <span class="sub-heading1"><a href="https://github.com/Yuri-Is-On-Rage-Mode"><u><i>Yuri-Is-On-Rage-Mode - Github</i></u></a></span>
+                    </div>
+                     <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div> <div class="ff-card">
+                    </div>                                                                                                                                  
+                </div>       
+            </div>
+        </div>
+
+        <div class="main-hero-thing" id="latest">
+            <div class="part-ff-r" style="padding:50px;width:110%">
+                <br>
+                <span class="hero-heading1-fc">Latest on <span class="grad-ns">Yuri</span></span>
+                <div class="ff-card-holder-red">
+                    <div class="ff-card" id="posts_1-10"></div> 
+                    <div class="ff-card" id="posts_10-20"></div> 
+                    <div class="ff-card" id="posts_20-30"></div>                                                                                                           
+                </div>       
+            </div>
+            <script>
+                async function fetchPosts() {
+                    const response = await fetch('../BlogPosts/posts.json');
+                    const posts = await response.json();
+                    return posts;
+                }
+        
+                function populateCards(posts, cardId, start, end) {
+                    const card = document.getElementById(cardId);
+                    const selectedPosts = posts.slice(start, end);
+        
+                    selectedPosts.forEach(post => {
+                        const postData = post.data;
+                        const postElement = document.createElement('div');
+                        postElement.innerHTML = `
+                            <h3>${postData.title}</h3>
+                            <p>${postData['short-desc']}</p>
+                            <a href="${postData['link-to-read']}">Read more</a>
+                        `;
+                        card.appendChild(postElement);
+                    });
+                }
+        
+                async function init() {
+                    const posts = await fetchPosts();
+        
+                    populateCards(posts, 'posts_1-10', 0, 10);
+                    populateCards(posts, 'posts_10-20', 10, 20);
+                    populateCards(posts, 'posts_20-30', 20, 30);
+                }
+        
+                init();
+            </script>
+        </div>
+       
     </section>
 
 
-    <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4" style="background: white">
+    <footer class="bg-spec-tt rounded-lg shadow dark:bg-gray-900 m-4" style="background: white">
         <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
