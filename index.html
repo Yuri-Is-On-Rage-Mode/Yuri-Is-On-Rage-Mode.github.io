@@ -1049,7 +1049,7 @@
                 <span class="hero-heading1-fc">Latest on <span class="grad-ns">Yuri</span></span>
                 <div class="ff-card-holder">
                     <style>
-                        .ff-card-z {
+                        .ff-card-new {
                             width: 50%;
                             margin: 5px;
                             padding: 10px;
@@ -1058,53 +1058,53 @@
                             font-family: monospace;
                             font-size: 15px;
                         }
-                        .whats_new_card {
+                        .latest_news_card {
                             border: 2px solid dodgerblue;
                             background: linear-gradient(to right, #e8f3ff, #c2e1ff);
                             color: #212529;
                         }
-                        .whats-new-date {
+                        .latest-news-date {
                             color: dodgerblue;
                             font-size: 16px;
                         }
-                        .whats-new-link {
+                        .latest-news-link {
                             color: dodgerblue;
                             font-size: 15px;
                             text-decoration: none;
                         }
-                        .whats-new-link:hover {
+                        .latest-news-link:hover {
                             text-decoration: underline;
                         }
-                        .updates_on_card {
+                        .site_updates_card {
                             border: 2px solid red;
                             background: linear-gradient(to right, #ffdddd, #ffb0b0);
                             color: #630000;
                         }
-                        .updates-on-date {
+                        .site-updates-date {
                             color: #f06;
                             font-size: 16px;
                         }
-                        .updates-on-link {
+                        .site-updates-link {
                             color: #f06;
                             font-size: 15px;
                             text-decoration: none;
                         }
-                        .updates-on-link:hover {
+                        .site-updates-link:hover {
                             text-decoration: underline;
                         }
                     </style>
-                    <div class="ff-card-z ff-card whats_new_card" id="whats_new_latest_10">
-                        SHOW LATEST 10 WHATS NEW ITEMS HERE
+                    <div class="ff-card-new ff-card latest_news_card" id="latest_news_10">
+                        SHOW LATEST 10 NEWS ITEMS HERE
                     </div>
-                    <div class="ff-card-z ff-card updates_on_card" id="updates_on_latest_10">
-                        SHOW LATEST 10 UPDATES ITEMS HERE
+                    <div class="ff-card-new ff-card site_updates_card" id="site_updates_10">
+                        SHOW LATEST 10 SITE UPDATES ITEMS HERE
                     </div>
                 </div>
             </div>
         </div>
         
         <script>
-            async function fetchData(url, displayFunc, fallbackFunc) {
+            async function fetchLatestData(url, displayFunc, fallbackFunc) {
                 try {
                     const response = await fetch(url);
                     if (!response.ok) {
@@ -1118,57 +1118,58 @@
                 }
             }
         
-            function displayWhatsNew(data) {
-                const whatsNewDiv = document.getElementById('whats_new_latest_10');
-                whatsNewDiv.innerHTML = data.slice(0, 10).map(post => `
+            function displayLatestNews(data) {
+                const newsDiv = document.getElementById('latest_news_10');
+                newsDiv.innerHTML = data.slice(0, 10).map(post => `
                     <div>
                         <span>
-                            <span class="whats-new-date">${post.date}</span> ${post.text}
-                            <a href="${post.link}" class="whats-new-link">Read More</a>
+                            <span class="latest-news-date">${post.date}</span> ${post.text}
+                            <a href="${post.link}" class="latest-news-link">Read More</a>
                         </span>
                     </div>
                 `).join('');
             }
         
-            function displayUpdatesOnSite(data) {
-                const updatesOnDiv = document.getElementById('updates_on_latest_10');
-                updatesOnDiv.innerHTML = data.slice(0, 10).map(post => `
+            function displaySiteUpdates(data) {
+                const updatesDiv = document.getElementById('site_updates_10');
+                updatesDiv.innerHTML = data.slice(0, 10).map(post => `
                     <div>
                         <span>
-                            <span class="updates-on-date">${post.date}</span> ${post.text}
-                            <a href="${post.link}" class="updates-on-link">Read More</a>
+                            <span class="site-updates-date">${post.date}</span> ${post.text}
+                            <a href="${post.link}" class="site-updates-link">Read More</a>
                         </span>
                     </div>
                 `).join('');
             }
         
-            function displayFallbackMessageWhatsNew() {
-                const whatsNewDiv = document.getElementById('whats_new_latest_10');
-                whatsNewDiv.innerHTML = `
+            function displayFallbackLatestNews() {
+                const newsDiv = document.getElementById('latest_news_10');
+                newsDiv.innerHTML = `
                     <div>
                         <span>
-                            <span class="whats-new-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
+                            <span class="latest-news-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
                         </span>
                     </div>
                 `;
             }
         
-            function displayFallbackMessageUpdatesOn() {
-                const updatesOnDiv = document.getElementById('updates_on_latest_10');
-                updatesOnDiv.innerHTML = `
+            function displayFallbackSiteUpdates() {
+                const updatesDiv = document.getElementById('site_updates_10');
+                updatesDiv.innerHTML = `
                     <div>
                         <span>
-                            <span class="updates-on-date">N/A</span> Sorry, we couldn't fetch the latest version control news.
+                            <span class="site-updates-date">N/A</span> Sorry, we couldn't fetch the latest site updates.
                         </span>
                     </div>
                 `;
             }
         
             document.addEventListener('DOMContentLoaded', () => {
-                fetchData('./PublicHomeDest/JsonD/whats_new.json', displayWhatsNew, displayFallbackMessageWhatsNew);
-                fetchData('./PublicHomeDest/JsonD/updates_on_site.json', displayUpdatesOnSite, displayFallbackMessageUpdatesOn);
+                fetchLatestData('./PublicHomeDest/JsonD/whats_new.json', displayLatestNews, displayFallbackLatestNews);
+                fetchLatestData('./PublicHomeDest/JsonD/updates_on_site.json', displaySiteUpdates, displayFallbackSiteUpdates);
             });
         </script>
+        
         
        
     </section>
