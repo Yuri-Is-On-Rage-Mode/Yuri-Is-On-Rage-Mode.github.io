@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/annomymys2.ico" type="image/x-icon">
+    <link rel="icon" href="../assets/annomymys2.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -179,9 +179,9 @@
     <header class="header-1 text-gray-600 body-font bg-purple-500 border-wave" style="top:0;background-color: #1a1a1a;">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
             <a class="flex title-font font-medium items-center text-gray-100 mb-4 md:mb-0">
-                <img src="assets/annomymys2.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
+                <img src="../assets/annomymys2.ico" alt="Annomymys Logo" class="w-10 h-10 rounded-full">
                 <span class="ml-3 text-l text-gray-100" style="font-family: monospace;font-size:15px;margin:10px;">/</span>
-                <img src="assets/me_myself.ico" alt="Me_Myself Logo" class="w-10 h-10 rounded-full">
+                <img src="../assets/me_myself.ico" alt="Me_Myself Logo" class="w-10 h-10 rounded-full">
                 <span class="ml-3 text-l text-gray-100 grad" style="font-family: monospace;">Yuri</span>
             </a>
             <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
@@ -293,7 +293,7 @@
                 /* Add default theme background color and image */
                 .theme-background {
                     background-color: #282c34; /* Default background color */
-                    background-image: url('assets/default.jpg'); /* Replace with your default image path */
+                    background-image: url('../assets/default.jpg'); /* Replace with your default image path */
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-position: center;
@@ -399,7 +399,7 @@
                                     sidebarTitle.textContent = 'Social Media';
                                     sidebarTitle.style.color = '212529'; /* Dark Gray */
                                     sidebar.style.background = 'linear-gradient(to right, white, #eeeeee)'; /* Default gradient */
-                                    sidebarContent.innerHTML = '<img src="assets/default-logo.png" class="bottom-right-logo" alt="Default Logo">';
+                                    sidebarContent.innerHTML = '<img src="../assets/default-logo.png" class="bottom-right-logo" alt="Default Logo">';
                                     sidebarContent.textContent = 'Click on a social media link to see the details here. Or don\'t. It\'s not like I\'ll be offended or anything... maybe just a little.';
                             }
                     sidebar.classList.remove('sidebar-hidden');
@@ -733,15 +733,15 @@
                         }
                 
                         document.addEventListener('DOMContentLoaded', () => {
-                            fetchData('PublicHomeDest/JsonD/whats_new.json', displayWhatsNew, displayFallbackMessageWhatsNew);
-                            fetchData('PublicHomeDest/JsonD/updates_on_site.json', displayUpdatesOnSite, displayFallbackMessageUpdatesOn);
+                            fetchData('./JsonD/whats_new.json', displayWhatsNew, displayFallbackMessageWhatsNew);
+                            fetchData('./JsonD/updates_on_site.json', displayUpdatesOnSite, displayFallbackMessageUpdatesOn);
                         });
                     </script>
                 </div>
             </div>            
             <div class="part-ff-r" style="
                 background: linear-gradient(to bottom left, white, white);
-                background-image: url('assets/Imgs/Space01.jpg');
+                background-image: url('../assets/Imgs/Space01.jpg');
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -769,9 +769,9 @@
             <div class="part-ff-r">
                 <div>
                     <div style="display: flex;">
-                        <img src="assets/Imgs/Mi_Lab.jpg" alt="Kat Image1" class="space-a-little">
-                        <img src="assets/Imgs/Rubot.jpg" alt="Kat Image2"  class="space-a-little">
-                        <img src="assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3" class="space-a-little">  
+                        <img src="../assets/Imgs/Mi_Lab.jpg" alt="Kat Image1" class="space-a-little">
+                        <img src="../assets/Imgs/Rubot.jpg" alt="Kat Image2"  class="space-a-little">
+                        <img src="../assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3" class="space-a-little">  
                     </div>
                     <div style="display: flex;">
                         <span class="sub-heading1" style="padding:10px;border:1px solid dodgerblue;margin:10px;border-top:6px solid dodgerblue;border-bottom:6px solid dodgerblue;font-size:13px;">
@@ -779,9 +779,9 @@
                         </span>                                        
                     </div>            
                     <div style="display: flex;">
-                        <img src="assets/Imgs/The_Lair.jpg" alt="Kat Image1" class="space-a-little">
-                        <img src="assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2"  class="space-a-little">
-                        <img src="assets/Imgs/yoyoyo.jpg" alt="Kat Image3" class="space-a-little">
+                        <img src="../assets/Imgs/The_Lair.jpg" alt="Kat Image1" class="space-a-little">
+                        <img src="../assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2"  class="space-a-little">
+                        <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3" class="space-a-little">
                     </div> 
                     <div style="display: flex;">
                         <span class="sub-heading1" style="padding:10px; border:1px solid dodgerblue; margin:10px; border-top:6px solid dodgerblue; border-bottom:6px solid dodgerblue; font-size:13px;">
@@ -839,20 +839,20 @@
                 }
             </style>
             <div class="da_spot">
-                <img src="assets/Imgs/Mi_Lab.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Rubot.jpg" alt="Kat Image2">
-                <img src="assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3">
-                <img src="assets/Cats/cat2.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Annoying_Kids_Watching_Something.jpg" alt="Kat Image1">
-                <img src="assets/Cats/cat3.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Green_Code.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Coll_Coder.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Random_Computer_Screen.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Party_All_Night.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2">
-                <img src="assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
+                <img src="../assets/Imgs/Mi_Lab.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Rubot.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/Sasta_Ironman.jpg" alt="Kat Image3">
+                <img src="../assets/Cats/cat2.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Annoying_Kids_Watching_Something.jpg" alt="Kat Image1">
+                <img src="../assets/Cats/cat3.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Green_Code.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Coll_Coder.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Random_Computer_Screen.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Party_All_Night.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
             </div>
         </div>      
 
@@ -912,8 +912,8 @@
                 </style>
                 <div class="da_spot2">
                     <div style="display: flex;">
-                        <img src="assets/Fun/Tony-El_Cucuy.jpg" alt="Kat Image1">
-                        <img src="assets/Fun/Habib.jpg" alt="Kat Image2">
+                        <img src="../assets/Fun/Tony-El_Cucuy.jpg" alt="Kat Image1">
+                        <img src="../assets/Fun/Habib.jpg" alt="Kat Image2">
                     </div>
                     <div style="display: flex;">
                         <span class="sub-heading1" style="padding:10px;border:1px solid #f06;margin:10px;border-top:6px solid #f06;border-bottom:6px solid #f06;font-size:13px;">
@@ -921,8 +921,8 @@
                         </span>                                        
                     </div>                              
                     <div style="display: flex;">
-                        <img src="assets/Fun/Elon.jpg" alt="Kat Image3"> 
-                        <img src="assets/Fun/js_Sucks.jpg" alt="Kat Image3">  
+                        <img src="../assets/Fun/Elon.jpg" alt="Kat Image3"> 
+                        <img src="../assets/Fun/js_Sucks.jpg" alt="Kat Image3">  
                     </div> 
                     <div style="display: flex;">
                         <span class="sub-heading1" style="padding:10px;border:1px solid #f06;margin:10px;border-top:6px solid #f06;border-bottom:6px solid #f06;font-size:13px;">
@@ -950,21 +950,21 @@
                 }
             </style>
             <div class="da_spot">
-                <img src="assets/Fun/js_Sucks.jpg" alt="Kat Image3">  
-                <img src="assets/Imgs/Annoying_Kids_Watching_Something.jpg" alt="Kat Image1">
-                <img src="assets/Cats/cat2.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Random_Computer_Screen.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2">
-                <img src="assets/Imgs/Green_Code.jpg" alt="Kat Image1">
-                <img src="assets/Cats/cat3.jpg" alt="Kat Image1">
-                <img src="assets/Fun/Elon.jpg" alt="Kat Image3"> 
-                <img src="assets/Fun/Tony-El_Cucuy.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Mi_Lab.jpg" alt="Kat Image1">
-                <img src="assets/Imgs/Rubot.jpg" alt="Kat Image2">
-                <img src="assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
-                <img src="assets/Fun/Habib.jpg" alt="Kat Image2">
-                <img src="assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
+                <img src="../assets/Fun/js_Sucks.jpg" alt="Kat Image3">  
+                <img src="../assets/Imgs/Annoying_Kids_Watching_Something.jpg" alt="Kat Image1">
+                <img src="../assets/Cats/cat2.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/I_Am_Josh.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Random_Computer_Screen.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Oppn_GamGam_star.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/Green_Code.jpg" alt="Kat Image1">
+                <img src="../assets/Cats/cat3.jpg" alt="Kat Image1">
+                <img src="../assets/Fun/Elon.jpg" alt="Kat Image3"> 
+                <img src="../assets/Fun/Tony-El_Cucuy.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Mi_Lab.jpg" alt="Kat Image1">
+                <img src="../assets/Imgs/Rubot.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/I_Am_Rich.jpg" alt="Kat Image1">
+                <img src="../assets/Fun/Habib.jpg" alt="Kat Image2">
+                <img src="../assets/Imgs/yoyoyo.jpg" alt="Kat Image3">
             </div>            
         </div>  
 
@@ -1165,8 +1165,8 @@
             }
         
             document.addEventListener('DOMContentLoaded', () => {
-                fetchData('PublicHomeDest/JsonD/whats_new.json', displayWhatsNew, displayFallbackMessageWhatsNew);
-                fetchData('PublicHomeDest/JsonD/updates_on_site.json', displayUpdatesOnSite, displayFallbackMessageUpdatesOn);
+                fetchData('./JsonD/whats_new.json', displayWhatsNew, displayFallbackMessageWhatsNew);
+                fetchData('./JsonD/updates_on_site.json', displayUpdatesOnSite, displayFallbackMessageUpdatesOn);
             });
         </script>
         
@@ -1212,22 +1212,22 @@
                         <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white" style="font-size: 25px; color: #212529;">⚖️ Legal</h2>
                         <ul class="text-gray-500 dark:text-gray-400 font-medium">
                             <li class="mb-4">
-                                <a class="hover:underline bitstream" href="PublicHomeDest/WebEss/Policies.html#privacy">🔒 Privacy</a>
+                                <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#privacy">🔒 Privacy</a>
                             </li>
                             <li class="mb-4">
-                                <a class="hover:underline bitstream" href="PublicHomeDest/WebEss/Policies.html#security">🔐 Security</a>
+                                <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#security">🔐 Security</a>
                             </li>
                             <li class="mb-4">
-                                <a class="hover:underline bitstream" href="PublicHomeDest/WebEss/Policies.html#legal">📜 Legal</a>
+                                <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#legal">📜 Legal</a>
                             </li>
                             <li class="mb-4">
-                                <a class="hover:underline bitstream" href="PublicHomeDest/WebEss/Policies.html#copyright">© Copyright</a>
+                                <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#copyright">© Copyright</a>
                             </li>
                             <li class="mb-4">
-                                <a class="hover:underline bitstream" href="PublicHomeDest/WebEss/Policies.html#disclaimer">🚫 Disclaimer</a>
+                                <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#disclaimer">🚫 Disclaimer</a>
                             </li>
                             <li class="mb-4">
-                                <a class="hover:underline bitstream" href="PublicHomeDest/WebEss/Policies.html#terms">📋 Terms</a>
+                                <a class="hover:underline bitstream" href="../PublicHomeDest/WebEss/Policies.html#terms">📋 Terms</a>
                             </li>
                         </ul>
                     </div>
@@ -1244,16 +1244,16 @@
                 </span>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>
-                        <a href="PublicHomeDest/WebEss/About.html" class="hover:underline me-4 md:me-6 press-start">📖 /About/</a>
+                        <a href="WebEss/About.html" class="hover:underline me-4 md:me-6 press-start">📖 /About/</a>
                     </li>
                     <li>
-                        <a href="PublicHomeDest/WebEss/Policies.html" class="hover:underline me-4 md:me-6 press-start">📜 /Policy/</a>
+                        <a href="WebEss/Policies.html" class="hover:underline me-4 md:me-6 press-start">📜 /Policy/</a>
                     </li>
                     <li>
                         <a href="https://github.com/Yuri-Is-On-Rage-Mode" class="hover:underline me-4 md:me-6 press-start">🐙 /Github/</a>
                     </li>
                     <li>
-                        <a href="Blogs/index.html" class="hover:underline me-4 md:me-6 press-start">📝 /Articles/</a>
+                        <a href="../Blogs/index.html" class="hover:underline me-4 md:me-6 press-start">📝 /Articles/</a>
                     </li>
                 </ul>
             </div>
