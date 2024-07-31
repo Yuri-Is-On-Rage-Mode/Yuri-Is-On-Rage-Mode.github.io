@@ -1099,78 +1099,78 @@
                     <div class="ff-card-new ff-card site_updates_card" id="site_updates_10">
                         SHOW LATEST 10 SITE UPDATES ITEMS HERE
                     </div>
+                                        
+                    <script>
+                        async function fetchLatestData(url, displayFunc, fallbackFunc) {
+                            try {
+                                const response = await fetch(url);
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok: ' + response.statusText);
+                                }
+                                const data = await response.json();
+                                displayFunc(data);
+                            } catch (error) {
+                                console.error('Error fetching data:', error);
+                                fallbackFunc();
+                            }
+                        }
+                    
+                        function displayLatestNews(data) {
+                            const newsDiv = document.getElementById('latest_news_10');
+                            newsDiv.innerHTML = data.slice(0, 10).map(post => `
+                                <div>
+                                    <span>
+                                        <span class="latest-news-date">${post.date}</span> ${post.text}
+                                        <a href="${post.link}" class="latest-news-link">Read More</a>
+                                    </span>
+                                </div>
+                            `).join('');
+                        }
+                    
+                        function displaySiteUpdates(data) {
+                            const updatesDiv = document.getElementById('site_updates_10');
+                            updatesDiv.innerHTML = data.slice(0, 10).map(post => `
+                                <div>
+                                    <span>
+                                        <span class="site-updates-date">${post.date}</span> ${post.text}
+                                        <a href="${post.link}" class="site-updates-link">Read More</a>
+                                    </span>
+                                </div>
+                            `).join('');
+                        }
+                    
+                        function displayFallbackLatestNews() {
+                            const newsDiv = document.getElementById('latest_news_10');
+                            newsDiv.innerHTML = `
+                                <div>
+                                    <span>
+                                        <span class="latest-news-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
+                                    </span>
+                                </div>
+                            `;
+                        }
+                    
+                        function displayFallbackSiteUpdates() {
+                            const updatesDiv = document.getElementById('site_updates_10');
+                            updatesDiv.innerHTML = `
+                                <div>
+                                    <span>
+                                        <span class="site-updates-date">N/A</span> Sorry, we couldn't fetch the latest site updates.
+                                    </span>
+                                </div>
+                            `;
+                        }
+                    
+                        document.addEventListener('DOMContentLoaded', () => {
+                            fetchLatestData('./PublicHomeDest/JsonD/whats_new.json', displayLatestNews, displayFallbackLatestNews);
+                            fetchLatestData('./PublicHomeDest/JsonD/updates_on_site.json', displaySiteUpdates, displayFallbackSiteUpdates);
+                        });
+                    </script>
+                    
+                    
                 </div>
             </div>
         </div>
-        
-        <script>
-            async function fetchLatestData(url, displayFunc, fallbackFunc) {
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok: ' + response.statusText);
-                    }
-                    const data = await response.json();
-                    displayFunc(data);
-                } catch (error) {
-                    console.error('Error fetching data:', error);
-                    fallbackFunc();
-                }
-            }
-        
-            function displayLatestNews(data) {
-                const newsDiv = document.getElementById('latest_news_10');
-                newsDiv.innerHTML = data.slice(0, 10).map(post => `
-                    <div>
-                        <span>
-                            <span class="latest-news-date">${post.date}</span> ${post.text}
-                            <a href="${post.link}" class="latest-news-link">Read More</a>
-                        </span>
-                    </div>
-                `).join('');
-            }
-        
-            function displaySiteUpdates(data) {
-                const updatesDiv = document.getElementById('site_updates_10');
-                updatesDiv.innerHTML = data.slice(0, 10).map(post => `
-                    <div>
-                        <span>
-                            <span class="site-updates-date">${post.date}</span> ${post.text}
-                            <a href="${post.link}" class="site-updates-link">Read More</a>
-                        </span>
-                    </div>
-                `).join('');
-            }
-        
-            function displayFallbackLatestNews() {
-                const newsDiv = document.getElementById('latest_news_10');
-                newsDiv.innerHTML = `
-                    <div>
-                        <span>
-                            <span class="latest-news-date">N/A</span> Sorry, we couldn't fetch the latest news at this time.
-                        </span>
-                    </div>
-                `;
-            }
-        
-            function displayFallbackSiteUpdates() {
-                const updatesDiv = document.getElementById('site_updates_10');
-                updatesDiv.innerHTML = `
-                    <div>
-                        <span>
-                            <span class="site-updates-date">N/A</span> Sorry, we couldn't fetch the latest site updates.
-                        </span>
-                    </div>
-                `;
-            }
-        
-            document.addEventListener('DOMContentLoaded', () => {
-                fetchLatestData('./PublicHomeDest/JsonD/whats_new.json', displayLatestNews, displayFallbackLatestNews);
-                fetchLatestData('./PublicHomeDest/JsonD/updates_on_site.json', displaySiteUpdates, displayFallbackSiteUpdates);
-            });
-        </script>
-        
-        
        
     </section>
 
