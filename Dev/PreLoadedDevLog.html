@@ -1,0 +1,446 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevLog | Fri3nds</title>
+    <link rel="icon" href="../assets/annomymys2.ico" type="image/x-icon">
+    <!-- Press Start 2P -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;display=swap">
+
+    <style>
+        .main-hero-thing {
+            display: flex;
+        }
+
+        .main-hero-thing .part-ff-l {
+            width: 40%;
+            padding: 10px;
+            margin: 0px;
+            border-radius: 0px;
+            border: 1px solid #212529;
+            background-color: white;
+        }
+
+        .hero-heading1 {
+            color: #212529;
+            font-size: 45px;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .hero-heading1-fc {
+            color: #212529;
+            font-size: 45px;
+            font-family: monospace;
+        }
+
+        .hero-heading2-fc {
+            color: #212529;
+            font-size: 30px;
+            font-family: monospace;
+        }
+
+        .sub-heading1 {
+            color: #212529;
+            font-size: 20px;
+            font-family: monospace;
+        }
+
+        .sub-heading2 {
+            color: #212529;
+            font-size: 15px;
+            font-family: monospace;
+        }
+
+        .main-hero-thing .part-ff-r {
+            width: 60%;
+            padding: 0px;
+            margin: 0px;
+            border-radius: 0px;
+            border: 1px solid #212529;
+            background-color: white;
+        }
+
+        .main-hero-thing .part-ff-r img {
+            width: 182px;
+            height: 182px;
+        }
+
+        .b-r {
+            position: absolute;
+            bottom: 0px;
+            right: 10px;
+            margin: 0;
+        }
+
+        .ff-card-holder {
+            display: flex;
+        }
+
+        .ff-card-holder .ff-card {
+            border-radius: 3px;
+            border: 1px solid dodgerblue;
+            border-top: 10px solid dodgerblue;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .ff-card-holder .ff-card .text-s1 {
+            color: #212529;
+            font-size: 17px;
+            font-family: monospace;
+        }
+
+        .ff-card-holder-red {
+            display: flex;
+        }
+
+        .ff-card-holder-red .ff-card {
+            border-radius: 3px;
+            border: 1px solid #f06;
+            border-top: 10px solid #f06;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .ff-card-holder-red .ff-card .text-s1 {
+            color: #212529;
+            font-size: 17px;
+            font-family: monospace;
+        }
+
+        .codeanic-code {
+            background-color: #212529;
+            border-radius: 5px;
+            border-top: 10px solid #555e68;
+            padding: 5px;
+            color: white;
+        }
+
+        .codeanic-code span {
+            color: white;
+        }
+
+        .codeanic-code ccc {
+            font-weight: bold;
+            animation: colorWave 6s infinite;
+        }
+
+        .codeanic-code com {
+            font-weight: bold;
+            animation: colorWave_forCode_Comment 6s infinite;
+        }
+
+        .codeanic-code ic {
+            padding-left: 10px;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            font-family: monospace;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #sidebar span {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        #sidebar a {
+            display: block;
+            color: #007bff;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        #sidebar a:hover {
+            text-decoration: underline;
+        }
+
+        #main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .section-heading {
+            font-size: 1.5em;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .repo-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            border-radius: 20px;
+            border: 1px solid #212529;
+            padding:10px;
+            background-color: #f4f4f4;
+            box-shadow: 4px 4px 2px gray;
+        }
+
+        .card {
+            background: #f4f4f4;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .card .repo-name {
+            margin: 0;
+            font-size: 15px;
+            font-family: monospace;
+            color: #212529;
+            text-align: center;
+        }
+
+        .card p {
+            margin: 5px 0;
+            color: #666;
+            text-align: center;
+        }
+
+        .card a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Gradient Text Animation */
+        @keyframes colorWave {
+            0% {
+                color: dodgerblue;
+            }
+            50% {
+                color: #f06;
+            }
+            100% {
+                color: dodgerblue;
+            }
+        }
+
+        /* Gradient Text Animation for Python Comment Syntax Highlight */
+        @keyframes colorWave_forCode_Comment {
+            0% {
+                color: #6a9955;
+            }
+            50% {
+                color: #567d46;
+            }
+            100% {
+                color: #6a9955;
+            }
+        }
+
+        .grad {
+            font-size: 2em;
+            font-weight: bold;
+            animation: colorWave 6s infinite;
+        }
+
+        .grad-ns {
+            font-weight: bold;
+            animation: colorWave 6s infinite;
+        }
+
+        .gh-log-div {
+            border: 1px solid dodgerblue;
+            background-color: #e0efff;
+            padding:10px;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar" style="background-color: #212529; border-top-right-radius: 20px; border-bottom-right-radius: 20px; padding: 20px;">
+        <span class="hero-heading1 grad">Dev Stuff</span>
+        <br>
+        <br>
+        <div style="padding:10px;border-radius: 20px;background-color: rgb(97, 0, 39);border:1px solid #f06;">
+            <span class="hero-heading1-fc" style="color:#f06;">DevSpace</span>
+            <br>
+            <a href="#repos-yuri" style="color:#f06;">Yuri-Is-On-Rage-Mode</a>
+            <a href="#repos-fri3nds" style="color:#f06;">Fri3nds-Group-Union</a>
+            <a href="#repos-dabang" style="color:#f06;">Yuri-DaBang</a>
+            <a href="#repos-nw" style="color:#f06;">NueWay</a>
+        </div>
+        <br>
+        <div style="padding:10px;border-radius: 20px;background-color: #226a00;border:1px solid lime;">
+            <span class="hero-heading1-fc" style="color:lime;">Nue</span>
+            <br>
+            <a href="#repos-nw" style="color:lime;">NueWay Org</a>
+            <a href="#repos-yuri" style="color:lime;">Nue Lang</a>
+            <a href="#repos-fri3nds" style="color:lime;">Nue Pkgs</a>
+        </div>
+        <br>
+        <div style="padding:10px;border-radius: 20px;background-color: #003c7c;border:1px solid dodgerblue;">
+            <span class="hero-heading1-fc" style="color:dodgerblue;">Github</span>
+            <br>
+            <a href="#repos-yuri">Yuri-Is-On-Rage-Mode</a>
+            <a href="#repos-fri3nds">Fri3nds-Group-Union</a>
+            <a href="#repos-dabang">Yuri-DaBang</a>
+            <a href="#repos-nw">NueWay</a>
+        </div>
+    </div>
+    <section id="main" class="main-log-bar">
+        <div id="data-source-info" style="background-color: #e9ffde;border: 1px solid lime;padding:10px;font-family: 'Courier New', Courier, monospace;">Data fetched from the web (GitHub API).</div> <!-- This div will show data source info -->
+        
+        <div id="log-container" class="gh-log-div">
+            <span id="repos-yuri" class="section-heading">Repositories of Yuri-Is-On-Rage-Mode</span>
+            <div class="repo-container" id="repos-yuri-container"><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-Is-On-Rage-Mode/LEARN-BLOCKCHAIN-WITH-PYTHON" target="_blank">LEARN-BLOCKCHAIN-WITH-PYTHON</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-Is-On-Rage-Mode/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-Is-On-Rage-Mode/Yuri-Is-On-Rage-Mode.github.io" target="_blank">Yuri-Is-On-Rage-Mode.github.io</a></span>    
+                            </div></div>
+            <span id="repos-fri3nds" class="section-heading">Repositories of Fri3nds-Group-Union</span>
+            <div class="repo-container" id="repos-fri3nds-container"></div>
+            <span id="repos-dabang" class="section-heading">Repositories of Yuri-DaBang</span>
+            <div class="repo-container" id="repos-dabang-container"><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/A-to-O" target="_blank">A-to-O</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/AeroScript-v2-Stable" target="_blank">AeroScript-v2-Stable</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/CasinoFunk-3000" target="_blank">CasinoFunk-3000</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/CCC-CryptoCoinCon" target="_blank">CCC-CryptoCoinCon</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/FangLang" target="_blank">FangLang</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/Game-Of-Life" target="_blank">Game-Of-Life</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/hNFT" target="_blank">hNFT</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/InfinitiSmartFramework" target="_blank">InfinitiSmartFramework</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/LEARN-BLOCKCHAIN-WITH-PYTHON" target="_blank">LEARN-BLOCKCHAIN-WITH-PYTHON</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/Nue" target="_blank">Nue</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/nVenv" target="_blank">nVenv</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/pipe" target="_blank">pipe</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/PowerScript-v1-critical" target="_blank">PowerScript-v1-critical</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/PyBotNet" target="_blank">PyBotNet</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/Richell-Botson" target="_blank">Richell-Botson</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/SimpleSocket-2000" target="_blank">SimpleSocket-2000</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/SuperMegaUltraRichellatron-9000" target="_blank">SuperMegaUltraRichellatron-9000</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/WebsiteCrawler-v1-stable" target="_blank">WebsiteCrawler-v1-stable</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/Yuri-DaBang" target="_blank">Yuri-DaBang</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/Yuri-DaBang.github.io" target="_blank">Yuri-DaBang.github.io</a></span>    
+                            </div></div>
+            <span id="repos-nw" class="section-heading">Repositories of NueWay</span>
+            <div class="repo-container" id="repos-nw-container"><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/.github" target="_blank">.github</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/Nue3-stable" target="_blank">Nue3-stable</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/nuebase-nb--v0.0.1-stable" target="_blank">nuebase-nb--v0.0.1-stable</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/nuebase-nb--v1.0.1-stable" target="_blank">nuebase-nb--v1.0.1-stable</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/NueBasicAdventurez" target="_blank">NueBasicAdventurez</a></span>    
+                            </div><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/SystemLib---V0.0.1" target="_blank">SystemLib---V0.0.1</a></span>    
+                            </div></div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const users = [
+                { username: 'Yuri-Is-On-Rage-Mode', avatar: 'https://avatars.githubusercontent.com/u/140644021?v=4' },
+                { username: 'Fri3nds-Group-Union', avatar: 'https://avatars.githubusercontent.com/u/140644022?v=4' },
+                { username: 'Yuri-DaBang', avatar: 'https://avatars.githubusercontent.com/u/158317180?v=4' },
+                { username: 'NueWay', avatar: 'https://avatars.githubusercontent.com/u/174025911?v=4' }
+            ];
+
+            const apiUrls = users.reduce((acc, user) => {
+                acc[user.username] = `https://api.github.com/users/${user.username}/repos`;
+                return acc;
+            }, {});
+
+            const logContainers = {
+                'Yuri-Is-On-Rage-Mode': document.getElementById('repos-yuri-container'),
+                'Fri3nds-Group-Union': document.getElementById('repos-fri3nds-container'),
+                'Yuri-DaBang': document.getElementById('repos-dabang-container'),
+                'NueWay': document.getElementById('repos-nw-container')
+            };
+
+            const dataSourceInfo = document.getElementById('data-source-info');
+
+            const fetchRepos = (url, fallback) => {
+                return fetch(url)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.json();
+                    })
+                    .catch(() => {
+                        // Fallback to local JSON file if GitHub API fetch fails
+                        dataSourceInfo.textContent = 'Data fetched from local file (Repos.json).';
+                        return fetch(fallback)
+                            .then(response => response.json())
+                            .catch(error => {
+                                console.error('Error fetching data from both sources:', error);
+                                return [];
+                            });
+                    })
+                    .then(data => {
+                        if (!dataSourceInfo.textContent) {
+                            dataSourceInfo.textContent = 'Data fetched from the web (GitHub API).';
+                        }
+                        return data;
+                    });
+            };
+
+            users.forEach(user => {
+                fetchRepos(apiUrls[user.username], `./Repos.json?user=${user.username}`)
+                    .then(repos => {
+                        repos.forEach(repo => {
+                            const card = document.createElement('div');
+                            card.classList.add('card');
+                            card.innerHTML = `
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/${repo.owner.login}" target="_blank">${user.username}</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="${repo.html_url}" target="_blank">${repo.name}</a></span>    
+                            `;
+                            logContainers[user.username].appendChild(card);
+                        });
+                    });
+            });
+        });
+    </script>
+    
+
+
+
+
+</body></html>
