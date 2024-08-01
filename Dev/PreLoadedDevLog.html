@@ -177,12 +177,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-
-            border-radius: 20px;
-            border: 1px solid #212529;
-            padding:10px;
-            background-color: #f4f4f4;
-            box-shadow: 4px 4px 2px gray;
         }
 
         .card {
@@ -269,55 +263,253 @@
             background-color: #e0efff;
             padding:10px;
             border-radius: 0px;
+            width:1100px;
+        }
+
+        .card-holder-npkgs {
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
 <body>
-    <div id="sidebar" style="background-color: #212529; border-top-right-radius: 20px; border-bottom-right-radius: 20px; padding: 20px;">
-        <span class="hero-heading1 grad">Dev Stuff</span>
+    <div id="sidebar" style="background-color: white; border-top-right-radius: 20px; border-bottom-right-radius: 20px; padding: 20px;box-shadow: 5p 5px 1px gray;border-right:2px solid #212529;">
+        <span class="hero-heading1 grad">Some Dev Stuff</span>
         <br>
         <br>
-        <div style="padding:10px;border-radius: 20px;background-color: rgb(97, 0, 39);border:1px solid #f06;">
-            <span class="hero-heading1-fc" style="color:#f06;">DevSpace</span>
+        <!-- <div style="padding:10px;border-radius: 20px;background-color: rgb(255, 188, 215);border:1px solid #f06;">
+            <span class="hero-heading1-fc" style="color:#f06;font-size: 25px;">Orgs</span>
             <br>
-            <a href="#repos-yuri" style="color:#f06;">Yuri-Is-On-Rage-Mode</a>
-            <a href="#repos-fri3nds" style="color:#f06;">Fri3nds-Group-Union</a>
-            <a href="#repos-dabang" style="color:#f06;">Yuri-DaBang</a>
-            <a href="#repos-nw" style="color:#f06;">NueWay</a>
+            <a href="#repos-fri3nds" style="color:#212529;">Fri3nds-Group-Union</a>
+            <a href="#repos-dabang" style="color:#212529;">NuePkgs</a>
+        </div>
+        <br> -->
+        <div style="padding:10px;border-radius: 20px;background-color: #ddffce;border:1px solid lime;">
+            <span class="hero-heading1-fc" style="color:lime;font-size: 25px;">Nue</span>
+            <br>
+            <a href="#repos-yuri" style="color:#212529;">Nue Lang</a>
+            <a href="#repos-yuri" style="color:#212529;">Nue ProjectManager</a>
+            <a href="#repos-fri3nds" style="color:#212529;">Nue Pkgs</a>
         </div>
         <br>
-        <div style="padding:10px;border-radius: 20px;background-color: #226a00;border:1px solid lime;">
-            <span class="hero-heading1-fc" style="color:lime;">Nue</span>
+        <div style="padding:10px;border-radius: 20px;background-color: #d2e8ff;border:1px solid dodgerblue;">
+            <span class="hero-heading1-fc" style="color:dodgerblue;font-size: 25px;">Github</span>
             <br>
-            <a href="#repos-nw" style="color:lime;">NueWay Org</a>
-            <a href="#repos-yuri" style="color:lime;">Nue Lang</a>
-            <a href="#repos-fri3nds" style="color:lime;">Nue Pkgs</a>
-        </div>
-        <br>
-        <div style="padding:10px;border-radius: 20px;background-color: #003c7c;border:1px solid dodgerblue;">
-            <span class="hero-heading1-fc" style="color:dodgerblue;">Github</span>
-            <br>
-            <a href="#repos-yuri">Yuri-Is-On-Rage-Mode</a>
-            <a href="#repos-fri3nds">Fri3nds-Group-Union</a>
-            <a href="#repos-dabang">Yuri-DaBang</a>
-            <a href="#repos-nw">NueWay</a>
+            <a href="#repos-yuri" style="color:#212529;">Yuri-Is-On-Rage-Mode</a>
+            <a href="#repos-fri3nds" style="color:#212529;">Fri3nds-Group-Union</a>
+            <a href="#repos-dabang" style="color:#212529;">Yuri-DaBang</a>
+            <a href="#repos-nw" style="color:#212529;">NueWay</a>
         </div>
     </div>
-    <section id="main" class="main-log-bar">
-        <div id="data-source-info" style="background-color: #e9ffde;border: 1px solid lime;padding:10px;font-family: 'Courier New', Courier, monospace;">Data fetched from the web (GitHub API).</div> <!-- This div will show data source info -->
+    <section id="main" class="main-log-bar" style="width:1100px;background-color: white;">
+        <!-- <br><span class="hero-heading1-fc-kk" style="font-size: 70px;">Orgs</span><br>
+        <span>=== Comming Soon ===</span> -->
+        <br><span class="hero-heading1-fc-kk" style="font-size: 70px;">Nue</span><br>
         
+        <div style="background:#e9ffde;border:1px solid lime;padding:10px;">
+            <style>
+                card-holder-2 {
+                    display:flex;
+                    width:1100px;
+                }
+
+                card-holder-2 card {
+                    width:49%;
+                    padding:10px;
+                    border:1px solid lime;
+                    color:green;
+                    margin:1px;
+                    border-radius: 5px;
+
+                    transition-duration: 0.2s;
+                }
+
+                card-holder-2 card:hover {
+                    width:50%;
+                    padding:10px;
+                    border:1px solid white;
+                    background-color: rgb(157, 255, 157);
+                    color:#212529;
+                    margin:1px;
+
+                    transition-duration: 0.2s;
+                }
+
+                card-holder-2 card a {
+                    border-bottom: 0px;
+                }
+
+                card-holder-2 card heading {
+                    font-family: 'Courier New', Courier, monospace;
+                    font-size: 25px;
+                }
+
+                card-holder-2 card desc {
+                    font-family: monospace;
+                    font-size: 15px;
+                }
+
+                card-holder-2 card link-container {
+                    padding: 10px;
+                    border: 1px solid;
+                    transition-duration: 0.2s;
+                }
+
+                card-holder-2 card link-container:hover {
+                    padding: 10px;
+                    border: 1px solid;
+                    background:linear-gradient(to bottom right,#c8fbb1,#b3ff8f);
+                    transition-duration: 0.2s;
+                }
+
+                card-holder-2 card link-container direct {
+                    font-family: monospace;
+                    font-size: 16px;
+                }
+
+                card-holder-2 card link-container git-link {
+                    font-family: monospace;
+                    font-size: 12px;
+                    border-bottom: 1px solid;
+                }
+
+                .hero-heading1-fc-kk {
+                    color:#212529;
+                    font-family: 'Courier New', Courier, monospace;
+                    font-size: 40px;
+                }
+            </style>
+
+            <div id="nue-lang"> </div>
+
+            <span class="hero-heading1-fc-kk">Nue Lang</span>
+            <card-holder-2>
+                <card>
+                    <heading>NueLang V3-Stable</heading><br><br>
+                    <desc>🌟 NueScript was a superset of AeroScript.</desc><br><br><br>
+                    <link-container>
+                        <direct><a href="https://github.com/NueWay/Nue3-stable">NueLang V3-Stable Github-Repo</a></direct>
+                    </link-container>
+                    <br><br><br>
+                    <div style="display: flex;">
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/Nue-Lang/V3/Docs.html">Docs</a></direct>
+                        </link-container>   
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/Nue-Lang/V3/How-To.html">How-To</a></direct>
+                        </link-container>
+                        <link-container style="display: flex;">
+                            <direct><a href="DiscordChannelCommingSoon.html">Forum</a></direct>
+                        </link-container>
+                    </div>
+                    <br>
+                </card>
+                <card>
+                    <heading>NueBasicAdventurez</heading><br><br>
+                    <desc>🌟 Adventurez - Basic Version Of Nue</desc><br><br><br>
+                    <link-container>
+                        <direct><a href="https://github.com/NueWay/NueBasicAdventurez">NueBasicAdventurez Github-Repo</a></direct>
+                    </link-container>
+                    <br><br><br>
+                    <div style="display: flex;">
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/Nue-Lang/Basic/Docs.html">Docs</a></direct>
+                        </link-container>   
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/Nue-Lang/Basic/How-To.html">How-To</a></direct>
+                        </link-container>
+                        <link-container style="display: flex;">
+                            <direct><a href="DiscordChannelCommingSoon.html">Forum</a></direct>
+                        </link-container>
+                    </div>
+                    <br>
+                </card>
+            </card-holder-2>
+            <br>
+
+            <div id="nue-pm"> </div> 
+
+            <span class="hero-heading1-fc-kk">Nue ProjectManager</span>   
+            <card-holder-2>
+                <card>
+                    <heading>Nuebase v=1.0.1-stable</heading><br><br>
+                    <desc>🌟 NueBase is a spiffy project manager for your groovy nue programs. 💻</desc><br><br><br>
+                    <link-container>
+                        <direct><a href="https://github.com/NueWay/nuebase-nb--v1.0.1-stable">Nuebase v=1.0.1-stable Github-Repo</a></direct>
+                    </link-container>
+                    <br><br><br>
+                    <div style="display: flex;">
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/NueBase/V1/Docs.html">Docs</a></direct>
+                        </link-container>   
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/NueBase/V1/How-To.html">How-To</a></direct>
+                        </link-container>
+                        <link-container style="display: flex;">
+                            <direct><a href="DiscordChannelCommingSoon.html">Forum</a></direct>
+                        </link-container>
+                    </div>
+                    <br>
+                </card>
+                <card>
+                    <heading>NueBaseBasic V1</heading><br><br>
+                    <desc>🌟 NueBaseBasic - Basic Version Of NueBase</desc><br><br><br>
+                    <link-container>
+                        <direct><a href="https://github.com/NueWay/NueBasicAdventurez">NBB is attached to NueBasicAdventurez Repo</a></direct>
+                    </link-container>
+                    <br><br><br>
+                    <div style="display: flex;">
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/NueBaseBasic/V1/Docs.html">Docs</a></direct>
+                        </link-container>   
+                        <link-container style="display: flex;">
+                            <direct><a href="NueWay/NueBaseBasic/V1/How-To.html">How-To</a></direct>
+                        </link-container>
+                        <link-container style="display: flex;">
+                            <direct><a href="DiscordChannelCommingSoon.html">Forum</a></direct>
+                        </link-container>
+                    </div>
+                    <br>
+                </card>
+            </card-holder-2>
+            <br>
+
+            <div id="nue-pkgs"> </div>
+
+            <span class="hero-heading1-fc-kk">Nue Pkgs</span>   
+            <card-holder-npkgs>
+                <div class="repo-container" id="repos-npkgs-container"><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NuePkgs" target="_blank">NuePkgs</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NuePkgs/.github" target="_blank">.github</a></span>    
+                            </div></div>
+            </card-holder-npkgs>
+        </div>
+        
+        <br><span class="hero-heading1-fc-kk" style="font-size: 70px;">Github</span><br>
+        <div id="data-source-info" style="background-color: #e0efff;border: 1px solid dodgerblue;padding:10px;font-family: 'Courier New', Courier, monospace;">Data fetched from the web (GitHub API).</div> <!-- This div will show data source info -->
+        <br>
         <div id="log-container" class="gh-log-div">
-            <span id="repos-yuri" class="section-heading">Repositories of Yuri-Is-On-Rage-Mode</span>
-            <div class="repo-container" id="repos-yuri-container"><div class="card">
+            <span id="repos-yuri" class="section-heading hero-heading1-fc-kk">Repositories of Yuri-Is-On-Rage-Mode</span>
+            <div class="repo-container" id="repos-yuri-container2"><div class="card">
                                 <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-Is-On-Rage-Mode/LEARN-BLOCKCHAIN-WITH-PYTHON" target="_blank">LEARN-BLOCKCHAIN-WITH-PYTHON</a></span>    
                             </div><div class="card">
                                 <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-Is-On-Rage-Mode/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a></span>    
                             </div><div class="card">
                                 <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-Is-On-Rage-Mode" target="_blank">Yuri-Is-On-Rage-Mode</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-Is-On-Rage-Mode/Yuri-Is-On-Rage-Mode.github.io" target="_blank">Yuri-Is-On-Rage-Mode.github.io</a></span>    
                             </div></div>
-            <span id="repos-fri3nds" class="section-heading">Repositories of Fri3nds-Group-Union</span>
-            <div class="repo-container" id="repos-fri3nds-container"></div>
-            <span id="repos-dabang" class="section-heading">Repositories of Yuri-DaBang</span>
+            <div style="border-top: 1px solid dodgerblue;margin:30px;"></div>
+
+            <span id="repos-fri3nds" class="section-heading hero-heading1-fc-kk">Repositories of Fri3nds-Group-Union</span>
+            <div class="repo-container" id="repos-fri3nds-container2"><div class="card">
+                                <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Fri3nds-Group-Union" target="_blank">Fri3nds-Group-Union</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Fri3nds-Group-Union/.github" target="_blank">.github</a></span>    
+                            </div></div>
+            <div style="border-top: 1px solid dodgerblue;margin:30px;"></div>
+            
+            <span id="repos-dabang" class="section-heading hero-heading1-fc-kk">Repositories of Yuri-DaBang</span>
             <div class="repo-container" id="repos-dabang-container"><div class="card">
                                 <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/A-to-O" target="_blank">A-to-O</a></span>    
                             </div><div class="card">
@@ -359,7 +551,9 @@
                             </div><div class="card">
                                 <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/Yuri-DaBang" target="_blank">Yuri-DaBang</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/Yuri-DaBang/Yuri-DaBang.github.io" target="_blank">Yuri-DaBang.github.io</a></span>    
                             </div></div>
-            <span id="repos-nw" class="section-heading">Repositories of NueWay</span>
+            <div style="border-top: 1px solid dodgerblue;margin:30px;"></div>
+            
+            <span id="repos-nw" class="section-heading hero-heading1-fc-kk">Repositories of NueWay</span>
             <div class="repo-container" id="repos-nw-container"><div class="card">
                                 <span class="repo-name"><span style="font-size:16px;color:purple;font-family:monospace;">@</span><a href="https://github.com/NueWay" target="_blank">NueWay</a><span style="font-size:16px;color:purple;font-family:monospace;">/</span><a href="https://github.com/NueWay/.github" target="_blank">.github</a></span>    
                             </div><div class="card">
@@ -382,7 +576,8 @@
                 { username: 'Yuri-Is-On-Rage-Mode', avatar: 'https://avatars.githubusercontent.com/u/140644021?v=4' },
                 { username: 'Fri3nds-Group-Union', avatar: 'https://avatars.githubusercontent.com/u/140644022?v=4' },
                 { username: 'Yuri-DaBang', avatar: 'https://avatars.githubusercontent.com/u/158317180?v=4' },
-                { username: 'NueWay', avatar: 'https://avatars.githubusercontent.com/u/174025911?v=4' }
+                { username: 'NueWay', avatar: 'https://avatars.githubusercontent.com/u/174025911?v=4' },
+                { username: 'NuePkgs', avatar: 'https://avatars.githubusercontent.com/u/177194935?v=4' }
             ];
 
             const apiUrls = users.reduce((acc, user) => {
@@ -391,10 +586,11 @@
             }, {});
 
             const logContainers = {
-                'Yuri-Is-On-Rage-Mode': document.getElementById('repos-yuri-container'),
-                'Fri3nds-Group-Union': document.getElementById('repos-fri3nds-container'),
+                'Yuri-Is-On-Rage-Mode': document.getElementById('repos-yuri-container2'),
+                'Fri3nds-Group-Union': document.getElementById('repos-fri3nds-container2'),
                 'Yuri-DaBang': document.getElementById('repos-dabang-container'),
-                'NueWay': document.getElementById('repos-nw-container')
+                'NueWay': document.getElementById('repos-nw-container'),
+                'NuePkgs': document.getElementById('repos-npkgs-container')
             };
 
             const dataSourceInfo = document.getElementById('data-source-info');

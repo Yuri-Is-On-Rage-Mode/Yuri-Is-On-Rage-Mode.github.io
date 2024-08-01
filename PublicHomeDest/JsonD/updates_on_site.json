@@ -1,27 +1,7 @@
 {
-    "122": {
-        "date": "1-june-2024",
-        "text": "We are launching a new product",
-        "link": "/NewProduct/Demo1.html"
-    },
-    "123": {
-        "date": "8-july-2024",
-        "text": "Website Updated",
-        "link": "/NewProduct/Demo2.html"
-    },
-    "124": {
-        "date": "8-july-2024",
-        "text": "Website Updated",
-        "link": "/NewProduct/Demo2.html"
-    },
-    "125": {
-        "date": "8-july-2024",
-        "text": "Website Updated",
-        "link": "/NewProduct/Demo2.html"
-    },
-    "126": {
-        "date": "8-july-2024",
-        "text": "Website Updated",
-        "link": "/NewProduct/Demo2.html"
+    "1": {
+        "date": "1-july-2024",
+        "text": "DevLog Launched!",
+        "link": "../Dev/DevLog.html"
     }
 }
