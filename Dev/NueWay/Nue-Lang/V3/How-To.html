@@ -565,7 +565,7 @@
       @route(url=&quot;/authentication/login/{username}/{password}&quot;, methods=[&quot;POST&quot;])
       void login(writer, request) {
         totalRequestsRecieved += 1
-        fmt.Println(&quot;\n[*] Request to LOGIN recieved!&quot;)
+        console.Println(&quot;\n[*] Request to LOGIN recieved!&quot;)
         USERNAME , PASSWORD = vars[&quot;username&quot;] , vars[&quot;password&quot;]
         RESPONCE = &quot;&quot;
         SENDssid = &quot;&quot;
@@ -573,19 +573,19 @@
             if USERNAME == &quot;hamza&quot; {
                 RESPONCE += &quot;User Identified!...&quot;
                 if PASSWORD == &quot;hamza&quot; {
-                    fmt.Printf(&quot; | Request Successfull! (User = %s)\n&quot;,USERNAME)
+                    console.Printf(&quot; | Request Successfull! (User = %s)\n&quot;,USERNAME)
                     SENDssid = &quot;3d5bd2cA15ef047689&quot;
                     RESPONCE += &quot;Password >> OKAY...&quot;
                 } else {
-                    fmt.Println(&quot; | Request Failed! (Wrong Password)&quot;)
+                    console.Println(&quot; | Request Failed! (Wrong Password)&quot;)
                     RESPONCE += &quot;Wrong Password!...&quot;
                 }
             } else {
-                fmt.Println(&quot; | Request Failed! (Wrong Username)&quot;)
+                console.Println(&quot; | Request Failed! (Wrong Username)&quot;)
                 RESPONCE += &quot;User not Identified!...&quot;
             }
         } else {
-            fmt.Println(&quot; | Request Failed! (No Username)&quot;)
+            console.Println(&quot; | Request Failed! (No Username)&quot;)
             RESPONCE += &quot;PLEASE PROVIDE A USERNAME!!!!&quot;
         }
         println(' | SENDED: {RESPONCE}')
@@ -595,15 +595,15 @@
       @route(url=&quot;/post/article/{ssid}/{post}&quot;, methods=[&quot;POST&quot;])
       void PostAnArticle(writer, request) {
         NumOfArticles += 1
-        fmt.Println(&quot;\n[+] Request to `Post An Article` recieved! TOTAL = &quot;,NumOfArticles)
+        console.Println(&quot;\n[+] Request to `Post An Article` recieved! TOTAL = &quot;,NumOfArticles)
         
         Ussid = vars[&quot;ssid&quot;]
         PostedArticle = vars[&quot;post&quot;]
     
         if Ussid == &quot;3d5bd2cA15ef047689&quot; {
-            fmt.Println(&quot; | SSID Validated!&quot;)
+            console.Println(&quot; | SSID Validated!&quot;)
             Posts += PostedArticle
-            fmt.Println(&quot; | Post: &quot;,PostedArticle)
+            console.Println(&quot; | Post: &quot;,PostedArticle)
             return {_responce:&quot;Article Posted Successfully!&quot;}
         } else {
             return {_responce:&quot;Wrong SSID!&quot;}
@@ -613,13 +613,13 @@
     
       @route(url=&quot;/get/article/all/{ssid}&quot;, methods=[&quot;GET&quot;])
       void GetAllArticles(writer, request) {
-        fmt.Println(&quot;\n[+] Request to `Get All Articles`&quot;)
+        console.Println(&quot;\n[+] Request to `Get All Articles`&quot;)
     
         Ussid = vars[&quot;ssid&quot;]
     
         if Ussid == &quot;3d5bd2cA15ef047689&quot; {
-            fmt.Println(&quot; | SSID Validated!&quot;)
-            fmt.Println(&quot; | Sending Posts &amp; Articles!&quot;)
+            console.Println(&quot; | SSID Validated!&quot;)
+            console.Println(&quot; | Sending Posts &amp; Articles!&quot;)
             return {_responce:&quot;OK&quot;,posts:Posts}
         }
         println(' | SENDED: {RESPONCE}')
@@ -1504,7 +1504,7 @@
         }
     
         void String() {
-            return fmt.sprintf("<span class="pl-kos">(</span><span class="pl-c1">%</span><span class="pl-s1">v</span><span class="pl-kos">)</span><span class="pl-kos">,</span><span class="pl-kos">(</span><span class="pl-c1">%</span>v<span class="pl-kos">)</span><span class="pl-s">"</span><span class="pl-kos">,</span> this<span class="pl-kos">.</span>x<span class="pl-kos">,</span> <span class="pl-s1">this</span><span class="pl-kos">.</span>y<span class="pl-kos">)</span><span class="pl-kos">;</span>
+            return console.sprintf("<span class="pl-kos">(</span><span class="pl-c1">%</span><span class="pl-s1">v</span><span class="pl-kos">)</span><span class="pl-kos">,</span><span class="pl-kos">(</span><span class="pl-c1">%</span>v<span class="pl-kos">)</span><span class="pl-s">"</span><span class="pl-kos">,</span> this<span class="pl-kos">.</span>x<span class="pl-kos">,</span> <span class="pl-s1">this</span><span class="pl-kos">.</span>y<span class="pl-kos">)</span><span class="pl-kos">;</span>
         <span class="pl-kos">}</span>
     <span class="pl-kos">}</span>
     v1 <span class="pl-c1">=</span> <span class="pl-k"><span class="pl-k">new</span></span> Vector<span class="pl-kos">(</span><span class="pl-c1">1</span><span class="pl-kos">,</span><span class="pl-c1">2</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
@@ -1533,7 +1533,7 @@
         }
     
         void String() {
-            return fmt.sprintf(&quot;(%v),(%v)&quot;, this.x, this.y);
+            return console.sprintf(&quot;(%v),(%v)&quot;, this.x, this.y);
         }
     }
     v1 = new Vector(1,2);
@@ -1762,7 +1762,7 @@
     stdout <span class="pl-c1">&lt;&lt;</span> <span class="pl-s"><span class="pl-s">"</span>hello <span class="pl-s">"</span></span> <span class="pl-c1">&lt;&lt;</span> <span class="pl-s"><span class="pl-s">"</span>world!<span class="pl-s">"</span></span> <span class="pl-c1">&lt;&lt;</span> <span class="pl-s"><span class="pl-s">"</span> How are you?<span class="pl-s">"</span></span> <span class="pl-c1">&lt;&lt;</span> <span class="pl-s1">endl</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container">
         <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="stdout.writeLine(&quot;Hello world&quot;)
     //same as above
-    fmt.fprintf(stdout, &quot;Hello world\n&quot;)
+    console.fprintf(stdout, &quot;Hello world\n&quot;)
     
     print(&quot;Please type your name:&quot;)
     name = stdin.read(1024)  //read up to 1024 bytes from stdin

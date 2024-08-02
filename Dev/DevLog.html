@@ -279,8 +279,8 @@
         }
     </style>
 </head>
-<body>
-    <div id="sidebar" style="background-color: white; border-top-right-radius: 20px; border-bottom-right-radius: 20px; padding: 20px;box-shadow: 5p 5px 1px gray;border-right:2px solid #212529;">
+<body style="background-color: white;">
+    <div id="sidebar" style="background-color: white; border-radius: 20px; padding: 20px;box-shadow: 5p 5px 1px gray;border:1px solid #212529;position: fixed;">
         <span class="hero-heading1 grad">Some Dev Stuff</span>
         <br>
         <br>
@@ -294,9 +294,9 @@
         <div style="padding:10px;border-radius: 20px;background-color: #ddffce;border:1px solid lime;">
             <span class="hero-heading1-fc" style="color:lime;font-size: 25px;">Nue</span>
             <br>
-            <a href="#repos-yuri" style="color:#212529;" href="#nue-lang">Nue Lang</a>
-            <a href="#repos-yuri" style="color:#212529;" href="#nue-pm">Nue ProjectManager</a>
-            <a href="#repos-fri3nds" style="color:#212529;" href="#nue-pkgs">Nue Pkgs</a>
+            <a href="#n-lang" style="color:#212529;" href="#nue-lang">Nue Lang</a>
+            <a href="#n-pm" style="color:#212529;" href="#nue-pm">Nue ProjectManager</a>
+            <a href="#n-pkgs" style="color:#212529;" href="#nue-pkgs">Nue Pkgs</a>
         </div>
         <br>
         <div style="padding:10px;border-radius: 20px;background-color: #d2e8ff;border:1px solid dodgerblue;">
@@ -308,7 +308,7 @@
             <a href="#repos-nw" style="color:#212529;">NueWay</a>
         </div>
     </div>
-    <section id="main" class="main-log-bar" style="width:1100px;background-color: white;">
+    <section id="main" class="main-log-bar" style="width:1100px;background-color: white;margin-left:260px;">
         <!-- <br><span class="hero-heading1-fc-kk" style="font-size: 70px;">Orgs</span><br>
         <span>=== Comming Soon ===</span> -->
         <br><span class="hero-heading1-fc-kk" style="font-size: 70px;">Nue</span><br>
@@ -387,13 +387,17 @@
                 }
             </style>
 
-            <div id="nue-lang"> </div>
+            <div id="n-lang"> </div>
 
             <span class="hero-heading1-fc-kk">Nue Lang</span>
             <card-holder-2>
                 <card>
                     <heading>NueLang V3-Stable</heading><br><br>
                     <desc>🌟 NueScript was a superset of AeroScript.</desc><br><br><br>
+                    <link-container>
+                        <direct><a href="../Dev/NueWay/Nue-Lang/V3/Hello.html">NueLang Home</a></direct>
+                    </link-container>
+                    <br><br><br>
                     <link-container>
                         <direct><a href="https://github.com/NueWay/Nue3-stable">NueLang V3-Stable Github-Repo</a></direct>
                     </link-container>
@@ -415,6 +419,10 @@
                     <heading>NueBasicAdventurez</heading><br><br>
                     <desc>🌟 Adventurez - Basic Version Of Nue</desc><br><br><br>
                     <link-container>
+                        <direct><a href="../Dev/NueWay/Nue-Lang/Basic/Hello.html">bNue Home</a></direct>
+                    </link-container>
+                    <br><br><br>
+                    <link-container>
                         <direct><a href="https://github.com/NueWay/NueBasicAdventurez">NueBasicAdventurez Github-Repo</a></direct>
                     </link-container>
                     <br><br><br>
@@ -434,7 +442,7 @@
             </card-holder-2>
             <br>
 
-            <div id="nue-pm"> </div> 
+            <div id="n-pm"> </div> 
 
             <span class="hero-heading1-fc-kk">Nue ProjectManager</span>   
             <card-holder-2>
@@ -481,7 +489,7 @@
             </card-holder-2>
             <br>
 
-            <div id="nue-pkgs"> </div>
+            <div id="n-pkgs"> </div>
 
             <span class="hero-heading1-fc-kk">Nue Pkgs</span>   
             <card-holder-npkgs>
