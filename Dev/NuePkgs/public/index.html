@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Organization Members</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+    .card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-right: 20px;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    .card p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="memberContainer">
+    <!-- Member cards will be injected here by JavaScript -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetchMembers();
+    });
+
+    function fetchMembers() {
+      fetch('/members')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          displayMembers(data);
+        })
+        .catch(error => {
+          console.error('Fetching from the server failed:', error);
+        });
+    }
+
+    function displayMembers(members) {
+      const container = document.getElementById('memberContainer');
+      container.innerHTML = '';
+      members.forEach(member => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${member.avatar_url}" alt="${member.login}">
+          <div>
+            <h3>${member.login}</h3>
+            <p>ID: ${member.id}</p>
+            <a href="${member.html_url}" target="_blank">GitHub Profile</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
