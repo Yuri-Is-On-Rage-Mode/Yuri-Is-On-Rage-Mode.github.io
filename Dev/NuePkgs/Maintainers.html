@@ -5,237 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Users Info</title>
     <style>
-        body {
-            font-family: monospace;
-            color: #212529;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-        }
+body {
+    font-family: monospace;
+    color: #212529;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 100px;
+    background-image: url('../../assets/Imgs/Space01.jpg');
+    background-size: cover; /* Ensure the background image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
 
-        .container {
-            display: flex;
-            width: 100%;
-            flex-wrap: wrap;
-        }
 
-        .user-info {
-            width: 50%;
-            padding: 20px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-        }
+    .container {
+        display: flex;
+        width: 100%;
+    }
 
-        .user-info:nth-child(odd) {
-            border-right: 2px solid rgb(255, 0, 0);
-        }
+    .user-info {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        background-color: #ffffff;
+    }
 
-        .user-info img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
+    .user-info:nth-child(odd) {
+        border-right: 2px solid rgb(255, 0, 0);
+    }
 
-        .user-info h2 {
-            color: rgb(255, 0, 0);
-        }
+    .user-info img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
 
-        .user-info a {
-            color: rgb(255, 0, 0);
-            text-decoration: none;
-            cursor: pointer;
-        }
+    .user-info h2 {
+        color: rgb(255, 0, 0);
+        font-size: 35px;
+        font-family: monospace;
+    }
 
-        .user-info a:hover {
-            text-decoration: underline;
-        }
+    .user-info a {
+        color: rgb(255, 0, 0);
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 20px;
+    }
 
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
+    .user-info a:hover {
+        text-decoration: underline;
+    }
 
-        .modal-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 80%;
-            max-height: 80%;
-            overflow-y: auto;
-            position: relative; /* Required for positioning the close button */
-        }
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
 
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            background-color: rgb(255, 0, 0); /* Highlight color */
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
+    .modal-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        width: 80%;
+        max-height: 80%;
+        overflow-y: auto;
+        position: relative; /* Required for positioning the close button */
+    }
 
-        .modal-close:hover {
-            background-color: #ff4d4d; /* Slightly lighter color on hover */
-            color: #fff;
-        }
+    .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgb(255, 0, 0); /* Highlight color */
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
 
-        .modal-close:focus {
-            outline: none; /* Removes the outline on focus */
-        }
-        
-        /* Style for modal content */
-        .modal-body p {
-            margin: 0 0 10px;
-            font-size: 14px;
-        }
-        
-        .modal-body h3 {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
+    .modal-close:hover {
+        background-color: #ff4d4d; /* Slightly lighter color on hover */
+        color: #fff;
+    }
 
-        .modal-body label {
-            font-weight: bold;
-            color: rgb(255, 0, 0);
-        }
+    .modal-close:focus {
+        outline: none; /* Removes the outline on focus */
+    }
+
     </style>
 </head>
 <body>
-    <div class="container" id="user-container">
-        <!-- User info will be inserted here -->
+    <div class="container">
+        <div class="user-info" id="user1">
+            <!-- User 1 info will be inserted here -->
+        </div>
+        <div class="user-info" id="user2">
+            <!-- User 2 info will be inserted here -->
+        </div>
     </div>
 
     <!-- Modal HTML -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span id="modal-close" class="modal-close">&times;</span>
-            <div id="modal-body" class="modal-body"></div>
+            <div id="modal-body"></div>
         </div>
     </div>
 
     <script>
-        // Load the user data from the local JSON file
-        fetch('./gh-user-data.json')
-            .then(response => response.json())
-            .then(data => {
-                // Extract user URLs
-                const userUrls = Object.keys(data).filter(url => url.startsWith('https://api.github.com/users/'));
-                const userContainer = document.getElementById('user-container');
+        const users = [
+            {
+                "login": "Josh0lite",
+                "id": 173884731,
+                "node_id": "U_kgDOCl1FOw",
+                "avatar_url": "https://avatars.githubusercontent.com/u/173884731?v=4",
+                "html_url": "https://github.com/Josh0lite",
+                "followers_url": "https://api.github.com/users/Josh0lite/followers",
+                "following_url": "https://api.github.com/users/Josh0lite/following{/other_user}",
+                "gists_url": "https://api.github.com/users/Josh0lite/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/Josh0lite/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/Josh0lite/subscriptions",
+                "organizations_url": "https://api.github.com/users/Josh0lite/orgs",
+                "repos_url": "https://api.github.com/users/Josh0lite/repos",
+                "events_url": "https://api.github.com/users/Josh0lite/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/Josh0lite/received_events",
+                "type": "User",
+                "site_admin": false
+            },
+            {
+                "login": "Yuri-Is-On-Rage-Mode",
+                "id": 140644021,
+                "node_id": "U_kgDOCGIOtQ",
+                "avatar_url": "https://avatars.githubusercontent.com/u/140644021?v=4",
+                "html_url": "https://github.com/Yuri-Is-On-Rage-Mode",
+                "followers_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/followers",
+                "following_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/following{/other_user}",
+                "gists_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/gists{/gist_id}",
+                "starred_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/starred{/owner}{/repo}",
+                "subscriptions_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/subscriptions",
+                "organizations_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/orgs",
+                "repos_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/repos",
+                "events_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/events{/privacy}",
+                "received_events_url": "https://api.github.com/users/Yuri-Is-On-Rage-Mode/received_events",
+                "type": "User",
+                "site_admin": false
+            }
+        ];
 
-                // Function to display user info
-                function displayUser(user, elementId) {
-                    const userInfo = document.createElement('div');
-                    userInfo.className = 'user-info';
-                    userInfo.id = elementId;
-                    userInfo.innerHTML = `
-                        <img src="${user.avatar_url}" alt="${user.login}'s Avatar">
-                        <h2>${user.login}</h2>
-                        <p>ID: ${user.id}</p>
-                        <p><a href="${user.html_url}" target="_blank">Profile</a></p>
-                        ${Object.keys(user).filter(key => key.endsWith('_url')).map(endpoint => `
-                            <p><a data-url="${user[endpoint]}" class="api-link">${endpoint.replace('_url', '').replace('_', ' ').toUpperCase()}</a></p>
-                        `).join('')}
-                        <p><label>Name:</label> ${user.name || 'N/A'}</p>
-                        <p><label>Company:</label> ${user.company || 'N/A'}</p>
-                        <p><label>Blog:</label> ${user.blog || 'N/A'}</p>
-                        <p><label>Location:</label> ${user.location || 'N/A'}</p>
-                        <p><label>Email:</label> ${user.email || 'N/A'}</p>
-                        <p><label>Hireable:</label> ${user.hireable || 'N/A'}</p>
-                        <p><label>Bio:</label> ${user.bio || 'N/A'}</p>
-                        <p><label>Public Repos:</label> ${user.public_repos}</p>
-                        <p><label>Public Gists:</label> ${user.public_gists}</p>
-                        <p><label>Followers:</label> ${user.followers}</p>
-                        <p><label>Following:</label> ${user.following}</p>
-                        <p><label>Created At:</label> ${user.created_at}</p>
-                        <p><label>Updated At:</label> ${user.updated_at}</p>
-                    `;
-                    userContainer.appendChild(userInfo);
-                }
+        function displayUser(user, elementId) {
+            const userInfo = document.getElementById(elementId);
+            userInfo.innerHTML = `
+                <img src="${user.avatar_url}" alt="${user.login}'s Avatar">
+                <h2>${user.login}</h2>
+                <p>ID: ${user.id}</p>
+                <p><a href="${user.html_url}" target="_blank">Profile</a></p>
+                <p><a data-url="${user.followers_url}" class="api-link">Followers</a></p>
+                <p><a data-url="${user.following_url}" class="api-link">Following</a></p>
+                <p><a data-url="${user.gists_url}" class="api-link">Gists</a></p>
+                <p><a data-url="${user.starred_url}" class="api-link">Starred</a></p>
+                <p><a data-url="${user.subscriptions_url}" class="api-link">Subscriptions</a></p>
+                <p><a data-url="${user.organizations_url}" class="api-link">Organizations</a></p>
+                <p><a data-url="${user.repos_url}" class="api-link">Repositories</a></p>
+                <p><a data-url="${user.events_url}" class="api-link">Events</a></p>
+                <p><a data-url="${user.received_events_url}" class="api-link">Received Events</a></p>
+            `;
+        }
 
-                // Function to display data from an endpoint in the modal
-                function openModal(content) {
-                    const modal = document.getElementById('modal');
-                    const modalBody = document.getElementById('modal-body');
-                    modalBody.innerHTML = content;
-                    modal.style.display = 'flex';
-                }
+        function openModal(content) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = content;
+            modal.style.display = 'flex';
+        }
 
-                // Function to close the modal
-                function closeModal() {
-                    const modal = document.getElementById('modal');
-                    modal.style.display = 'none';
-                }
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
 
-                // Add event listener to close the modal
-                document.getElementById('modal-close').addEventListener('click', closeModal);
+        document.getElementById('modal-close').addEventListener('click', closeModal);
 
-                // Add event listener to open the modal for API links
-                document.addEventListener('click', function(event) {
-                    if (event.target.classList.contains('api-link')) {
-                        event.preventDefault();
-                        const url = event.target.getAttribute('data-url');
-                        const userData = data[url];
-                        let content = '<h3>API Response:</h3>';
-                        if (Array.isArray(userData)) {
-                            content += '<ul>';
-                            userData.forEach(item => {
-                                content += '<li><strong>Item:</strong><br>';
-                                for (const [key, value] of Object.entries(item)) {
-                                    if (typeof value === 'object') {
-                                        content += `<h4>${key}:</h4>`;
-                                        for (const [subKey, subValue] of Object.entries(value)) {
-                                            content += `<p><strong>${subKey}:</strong> ${subValue}</p>`;
-                                        }
-                                    } else {
-                                        content += `<p><strong>${key}:</strong> ${value}</p>`;
-                                    }
-                                }
-                                content += '</li>';
-                            });
-                            content += '</ul>';
-                        } else {
-                            for (const [key, value] of Object.entries(userData)) {
-                                if (typeof value === 'object') {
-                                    content += `<h4>${key}:</h4>`;
-                                    for (const [subKey, subValue] of Object.entries(value)) {
-                                        content += `<p><strong>${subKey}:</strong> ${subValue}</p>`;
-                                    }
-                                } else {
-                                    content += `<p><strong>${key}:</strong> ${value}</p>`;
-                                }
-                            }
-                        }
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('api-link')) {
+                event.preventDefault();
+                const url = event.target.getAttribute('data-url');
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        let content = '<h3>API Response:</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
                         openModal(content);
-                    }
-                });
+                    })
+                    .catch(error => {
+                        let content = '<h3>Error:</h3><p>Unable to fetch data.</p>';
+                        openModal(content);
+                    });
+            }
+        });
 
-                // Display information for each user
-                userUrls.forEach(url => {
-                    const user = data[url];
-                    const userId = url.split('/').pop(); // Extract user ID from URL
-                    displayUser(user, `user-${userId}`);
-                });
-            });
+        displayUser(users[0], 'user1');
+        displayUser(users[1], 'user2');
     </script>
 </body>
 </html>
