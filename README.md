@@ -1,10 +1,10 @@
 # 🌟 GitHub Pages! 🌟
 
-Hey there, fellow internet explorer! 🚀 You've stumbled upon the magical realm of **Yuri**! 🧙‍♂️💻 Prepare yourself for a wild ride through my world of code, chaos, and creativity! 🎢✨
+Hey there, fellow internet explorer! 🚀 You've stumbled upon the magical realm of **HamzaS**! 🧙‍♂️💻 Prepare yourself for a wild ride through my world of code, chaos, and creativity! 🎢✨
 
 ## 🌐 What's This About?
 
-This GitHub Pages site is where I showcase my epic projects, mind-blowing programming languages, and maybe a few rants about my hacked account (RIP `Yuri-DaBang`) 😡😠🤬. Join me as I dive into the depths of coding madness and come out victorious (hopefully)! 💪🦸‍♂️
+This GitHub Pages site is where I showcase my epic projects, mind-blowing programming languages, and maybe a few rants about my hacked account (RIP `HamzaS-DaBang`) 😡😠🤬. Join me as I dive into the depths of coding madness and come out victorious (hopefully)! 💪🦸‍♂️
 
 ## 🤩 What You'll Find Here
 
@@ -27,7 +27,7 @@ This GitHub Pages site is where I showcase my epic projects, mind-blowing progra
 ## 💬 Connect with Me
 
 - **Email**: Send a digital owl to `hamzasufyanmacrohard@gmail.com` 📧🦉
-- **Patreon**: Support my madness at [patreon.com/akaYuri](https://www.patreon.com/akaYuri) 💸✨
+- **Patreon**: Support my madness at [patreon.com/akaHamzaS](https://www.patreon.com/akaHamzaS) 💸✨
 
 ## 📢 Call to Action
 
